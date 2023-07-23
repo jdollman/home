@@ -1,11 +1,17 @@
 ---
-title: "jpauldoll.github.io"
+title: "Justin Dollman"
+image: hompg.gif
+about: 
+  template: trestles
+  image-shape: rectangle
+  image-width: 23em
+  links:
+    - text: YouTube
+      href: 
+    - text: GitHub
+      href: https://github.com/jdollman
+    - text: Email
+      href: mailto:justin.dollman@stonybrook.edu
+    - text: Stony Brook
+      href: https://www.stonybrook.edu/commcms/polisci/people/grad_students.php
 ---
-
-This is a Quarto website.
-
-To learn more about Quarto websites visit <https://quarto.org/docs/websites>.
-
-```{r}
-1 + 1
-```
