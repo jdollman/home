@@ -10,6 +10,8 @@ about:
       href: https://github.com/jdollman
     - text: Stony Brook
       href: https://www.stonybrook.edu/commcms/polisci/people/grad_students.php
+    - text: Google Scholar
+      href: https://scholar.google.com/citations?user=jEcWv_UAAAAJ
     - text: Email
       href: mailto:justin.dollman@stonybrook.edu
 ---

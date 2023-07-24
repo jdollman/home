@@ -1,0 +1,44 @@
+---
+title: "Chapter 1: The Essence of Calculus"
+format: html
+---
+
+#
+
+[Link to the YouTube video](https://youtu.be/WUvTyaaNkzM)
+
+This video is all about $\pi r^2$ and where it might come from. Will we discover how pi was figured out?
+
+"Math has a tendency to reward you when you respect its ____________"
+Symmetries
+
+Cutting a cirlce into concentric rings. You flatten them out. What shape do you get and what's its area?
+
+You'd get trapezoids, but we'll represent them as rectangles. Their length is $2\pi r_i$ where $r_i$ is the radius of the i^th^ concentric circle and its with is $dr$.
+
+We'll discover integrals, derivatives, and the fact that these two are opposites.
+
+
+Chapter 2: The Paradox of the Derivative
+https://youtu.be/9vKqVkMQHKk
+
+Chapter 3: Derivatives Formulas through Geometry
+https://youtu.be/S0_qX4VJhMQ
+
+Chapter 4: Visualizing the Chain Rule and Product Rule
+https://youtu.be/YG15m2VwSjA
+
+Chapter 5: What's so special about Euler's Number $e$
+https://youtu.be/m2MIpDrF7Es
+
+Chapter 6: Implicit Differentiation
+https://youtu.be/qb40J4N1fa4
+
+Chapter 7: Limits, L'Hopital, Epsilon-Delta Definition
+https://youtu.be/kfF40MiS7zA
+
+Chapter 8: Integration and the Fundamental Theorem of Calculus
+https://youtu.be/rfG8ce4nNh0
+
+Chapter 9: What does Area have to do with slope?
+https://youtu.be/FnJqaIESC2s

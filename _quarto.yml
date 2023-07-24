@@ -2,18 +2,23 @@ project:
   type: website
   output-dir: docs
 website:
-  title: "home"
+  title: ""
   navbar:
-    left:
+    right:
       - href: index.qmd
         text: Home
-      - about.qmd
+      - teaching.qmd
+      - research.qmd
+      - math-camp-homepage.qmd
 
 format:
   html:
-    theme: cosmo
+    theme:
+      light: minty
+      dark: slate
     css: styles.css
     toc: true
+    page-layout: full
 
-editor: visual
+editor: source
 

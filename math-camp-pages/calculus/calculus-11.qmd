@@ -1,0 +1,56 @@
+---
+title: "Chapter 11: Taylor Series"
+format: html
+---
+
+For each of these you should
+
+0) link to youtube video
+a) have two versions
+  - an "essentials" version that is mostly a recap
+  - and a 'ad astra' version that goes deeper
+b) use in econometrics and machine learning
+c) next step
+
+#
+
+Q: In the video, Grant refers to Taylor polynomials as approximations of functions. Can you flesh that out?
+A: The function being approximated is usually a non-polynomial function and a Taylor polynomial is ... a polynomial.
+
+Q: Abstractly, what form does a quadratic approximation take?
+A: $f(x) \approx c_0 + c_1 x + c_2 x^2$
+
+Q: Can you then guess what forms a linear and cubic approximation will take, respectively?
+A: A linear approximation would be $f(x) \approx c_0 + c_1 x$ (classic $a + mx$ line formula), and a cubic approximation $f(x) \approx c_0 + c_1 x + c_2 x^2 + c_3 x^3$
+
+Q: Now, using summation notation can you write out the form of an n^th^ degree approximation of $f(x)$?
+A: $$f(x) \approx \sum_{i=0}^n c_ix^i$$
+
+Q: Can you recapitulate the process that gave $1 - \frac{x^2}2$ as the approximation of $\cos x$ near 0?
+A: You can go to the video at 5:40 to check yourself.
+A: First, you have to remember that it's a quadratic approximation, so your template is $\cos x \approx c_0 + c_1 x + c_2 x^2$. If you had forgotten that (or don't see that), note that $1 - \frac{x^2}2 = 1 + 0 x + - \frac 12 x$, meaning that $c_0 = 1,\ c_1 = 0,\ c_2 = -\frac 12$.
+Your goal here is to 'fit' the $c_i$ parameters (a fancy machine-learning inspired way of saying that you're choosing the $c_i$ values that give you the best approximation). Now, you need $\cos 0 = c_0 + c_1 (0) + c_2 (0)^2 \\ 1 = c_0  + 0 + 0$, so $c_0 = 1$. Then, to ensure that the rate of change (slope, derivative) of the approximation is the same as the rate of change of cosine, you take the derivatives of both: $ - \sin x = c_1 + 2 c_2 x$ and evaluate at zero: $ - \sin 0 = c_1 + 2 c_2 \cdot 0 \\ 0 = c_1$. So now we have $c_0 = 1,\ c_1 = 0$. We also want their second derivatives to be the same at zero, so we take the second derivatives of both: $- \cos x = 2 c_2$ and evaluate at zero: $- \cos 0 = 2 c_2 \\ -1 = 2c_2$, meaning that $c_2 = - \frac 12$
+
+Q: Generally, how do you make an approximation better? Can you think of any caveats?
+A: Increasing the degree of the polynomial makes the approximation better, usually. 
+
+There are two ways to understand the 'caveat' tag. First, remember that the value of approximations generally is that they're simpler, so having a high degree polynomial might defeat the purpose of the approximation enterprise. The other caveat has to do with divergent series (see below).
+
+Q: GS has an $X \rightarrow Y$ (where $X$ is the input and $Y$ is the output) diagram for summarizing what Taylor polynomials are all about. From that vague clue, can you remember what it is?
+A: They take in derivative information at a point and give back approximations of the function's output.
+
+Q: Find the linear approximation of $f(x) = 5 - 2x + 3x^2$
+A:
+As a note, if you've taken calculus before you'll remember that the $3x^2$ term 'dominates' the output as $x \rightarrow \pm \infty$, meaning that the linear approximation will be extremely bad (we lopped off the most relevant part!!). That's why it's important to occasionally remember that we're approximating outputs for values *near the expansion point*, which in this case is zero. And notice that around 0, $3x^2$, the term that ends up dominating, is actually 'less relevant' because squaring a value $x$ where $|x| < 1$ 
+and when $|x| << 1$, $|x^2| << |x|$
+
+Q: Find the quadratic approximation of $f(x) = 5 - 2x + 3x^2$
+A: The first thing you'd ideally have remembered is that, as your polynomial expansions get higher in degree, the lower degree part doesn't change. So [insert previous bit]
+You could also notice that $5 - 2x + 3x^2$ is already in the 'template' form of $c_0 + c_1 x + c_2 x^2$. There was no work to do!
+The general point is that an n^th^ degree Taylor polynomial 'approximation' of an n^th^ degree polynomial function is just the original function
+
+Q: Here's a harder one. Find the cubic approximation of $\ln x$
+A: 
+
+Convergence
+Divergence.

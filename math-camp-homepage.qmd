@@ -1,0 +1,37 @@
+---
+title: "3B1B Math Camp"
+---
+
+Here's a 
+
+Right now these pages are in their beta version. This means that the notes for the 3Blue1Brown videos themselves are complete, but the statistics extensions are for the most part still outstanding.
+
+## About
+
+Who is this for? This is for anyone who needs to learn calculus and/or linear algebra for a statistics, econometrics, or machine learning program. The material is fundamental enough that none of it is irrelevant for any of those.
+
+The specific occasion was a five-day intensive math camp I taught to incoming political science PhD students in the late summer of 2023. Because the whole idea of an intensive math camp that remediates years of quantitative training is folly, I decided that I want to create a resource that would last beyond the five days and be useful when the students were actually faced with difficult concepts in their second semester course.
+
+The number of introductions to is vast and at this point anyone who creates their own introduction is, whether they know it or not, pursuing some type of vanity project. So I decided to pursue a slightly less vain project and piggyback on Grant Sanderson’s wonderful 3Blue1Brown series of videos on calculus and linear algebra. 
+
+## Content
+
+### Selected Precalculus
+
+### Calculus
+
+* [01: The Essence of Calculus](math-camp-pages/calculus/calculus-1.qmd)
+*
+*
+
+### Linear Algebra
+
+
+## Further resources
+
+For the hurried I'd recommend
+
+* Jeff Gill's [*Essential Mathematics for Political and Social Research*](https://www.amazon.com/Essential-Mathematics-Political-Research-Analytical/dp/052168403X)
+* Cohen's *Linear Algebra*
+
+And for those looking to delectate in the details, nothing beats MIT's OpenCourse. 
