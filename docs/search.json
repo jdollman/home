@@ -12,5 +12,285 @@
     "title": "About",
     "section": "",
     "text": "About this site\n\n1 + 1\n\n[1] 2"
+  },
+  {
+    "objectID": "teaching.html",
+    "href": "teaching.html",
+    "title": "Teaching",
+    "section": "",
+    "text": "At Stony Brook I’ve been the ‘instructor of record’ for Introduction to Statistics (undergraduate and graduate) and Experiments in Political Science (undergraduate). In addition to those bureaucratically sanctioned courses, I also taught an introductory math camp to incoming PhD students and, along with my esteemed former colleague Pei-Hsun Hsieh, I co-taught a weekly introduction to R during the Fall 2019 semester to graduate students from sundry social sciences.\nCurrently, materials are only available for the math camp. The rest seem to have been apprehended by federal authorities from a Mar-a-Lago bathroom. A flyer from the Introduction to R course survives, however."
+  },
+  {
+    "objectID": "math-camp-pages/linear-algebra/la-09.html",
+    "href": "math-camp-pages/linear-algebra/la-09.html",
+    "title": "Chapter 9: Nonsquare matrices as transformations between dimensions",
+    "section": "",
+    "text": "Quarto enables you to weave together content and executable code into a finished document. To learn more about Quarto see https://quarto.org."
+  },
+  {
+    "objectID": "math-camp-pages/linear-algebra/la-09.html#running-code",
+    "href": "math-camp-pages/linear-algebra/la-09.html#running-code",
+    "title": "Chapter 9: Nonsquare matrices as transformations between dimensions",
+    "section": "Running Code",
+    "text": "Running Code\nWhen you click the Render button a document will be generated that includes both content and the output of embedded code. You can embed code like this:\n\n1 + 1\n\n[1] 2\n\n\nYou can add options to executable code like this\n\n\n[1] 4\n\n\nThe echo: false option disables the printing of code (only output is displayed)."
+  },
+  {
+    "objectID": "math-camp-pages/linear-algebra/la-08.html",
+    "href": "math-camp-pages/linear-algebra/la-08.html",
+    "title": "Chapter 8: Inverse matrices, column space and null space",
+    "section": "",
+    "text": "Quarto enables you to weave together content and executable code into a finished document. To learn more about Quarto see https://quarto.org."
+  },
+  {
+    "objectID": "math-camp-pages/linear-algebra/la-08.html#running-code",
+    "href": "math-camp-pages/linear-algebra/la-08.html#running-code",
+    "title": "Chapter 8: Inverse matrices, column space and null space",
+    "section": "Running Code",
+    "text": "Running Code\nWhen you click the Render button a document will be generated that includes both content and the output of embedded code. You can embed code like this:\n\n1 + 1\n\n[1] 2\n\n\nYou can add options to executable code like this\n\n\n[1] 4\n\n\nThe echo: false option disables the printing of code (only output is displayed)."
+  },
+  {
+    "objectID": "math-camp-pages/linear-algebra/la-17.html",
+    "href": "math-camp-pages/linear-algebra/la-17.html",
+    "title": "Chapter 17: Abstract vector spaces",
+    "section": "",
+    "text": "Quarto enables you to weave together content and executable code into a finished document. To learn more about Quarto see https://quarto.org."
+  },
+  {
+    "objectID": "math-camp-pages/linear-algebra/la-17.html#running-code",
+    "href": "math-camp-pages/linear-algebra/la-17.html#running-code",
+    "title": "Chapter 17: Abstract vector spaces",
+    "section": "Running Code",
+    "text": "Running Code\nWhen you click the Render button a document will be generated that includes both content and the output of embedded code. You can embed code like this:\n\n1 + 1\n\n[1] 2\n\n\nYou can add options to executable code like this\n\n\n[1] 4\n\n\nThe echo: false option disables the printing of code (only output is displayed)."
+  },
+  {
+    "objectID": "math-camp-pages/linear-algebra/la-03.html",
+    "href": "math-camp-pages/linear-algebra/la-03.html",
+    "title": "Chapter 3: Linear combinations, span, and basis vectors",
+    "section": "",
+    "text": "Quarto enables you to weave together content and executable code into a finished document. To learn more about Quarto see https://quarto.org."
+  },
+  {
+    "objectID": "math-camp-pages/linear-algebra/la-03.html#running-code",
+    "href": "math-camp-pages/linear-algebra/la-03.html#running-code",
+    "title": "Chapter 3: Linear combinations, span, and basis vectors",
+    "section": "Running Code",
+    "text": "Running Code\nWhen you click the Render button a document will be generated that includes both content and the output of embedded code. You can embed code like this:\n\n1 + 1\n\n[1] 2\n\n\nYou can add options to executable code like this\n\n\n[1] 4\n\n\nThe echo: false option disables the printing of code (only output is displayed)."
+  },
+  {
+    "objectID": "math-camp-pages/linear-algebra/la-02.html",
+    "href": "math-camp-pages/linear-algebra/la-02.html",
+    "title": "Chapter 2: Vectors, what even are they?",
+    "section": "",
+    "text": "Quarto enables you to weave together content and executable code into a finished document. To learn more about Quarto see https://quarto.org."
+  },
+  {
+    "objectID": "math-camp-pages/linear-algebra/la-02.html#running-code",
+    "href": "math-camp-pages/linear-algebra/la-02.html#running-code",
+    "title": "Chapter 2: Vectors, what even are they?",
+    "section": "Running Code",
+    "text": "Running Code\nWhen you click the Render button a document will be generated that includes both content and the output of embedded code. You can embed code like this:\n\n1 + 1\n\n[1] 2\n\n\nYou can add options to executable code like this\n\n\n[1] 4\n\n\nThe echo: false option disables the printing of code (only output is displayed)."
+  },
+  {
+    "objectID": "math-camp-pages/linear-algebra/la-16.html",
+    "href": "math-camp-pages/linear-algebra/la-16.html",
+    "title": "Chapter 16: A quick trick for computing eigenvalues",
+    "section": "",
+    "text": "Quarto enables you to weave together content and executable code into a finished document. To learn more about Quarto see https://quarto.org."
+  },
+  {
+    "objectID": "math-camp-pages/linear-algebra/la-16.html#running-code",
+    "href": "math-camp-pages/linear-algebra/la-16.html#running-code",
+    "title": "Chapter 16: A quick trick for computing eigenvalues",
+    "section": "Running Code",
+    "text": "Running Code\nWhen you click the Render button a document will be generated that includes both content and the output of embedded code. You can embed code like this:\n\n1 + 1\n\n[1] 2\n\n\nYou can add options to executable code like this\n\n\n[1] 4\n\n\nThe echo: false option disables the printing of code (only output is displayed)."
+  },
+  {
+    "objectID": "math-camp-pages/linear-algebra/la-14.html",
+    "href": "math-camp-pages/linear-algebra/la-14.html",
+    "title": "Chapter 14: Change of basis",
+    "section": "",
+    "text": "Quarto enables you to weave together content and executable code into a finished document. To learn more about Quarto see https://quarto.org."
+  },
+  {
+    "objectID": "math-camp-pages/linear-algebra/la-14.html#running-code",
+    "href": "math-camp-pages/linear-algebra/la-14.html#running-code",
+    "title": "Chapter 14: Change of basis",
+    "section": "Running Code",
+    "text": "Running Code\nWhen you click the Render button a document will be generated that includes both content and the output of embedded code. You can embed code like this:\n\n1 + 1\n\n[1] 2\n\n\nYou can add options to executable code like this\n\n\n[1] 4\n\n\nThe echo: false option disables the printing of code (only output is displayed)."
+  },
+  {
+    "objectID": "math-camp-pages/linear-algebra/la-15.html",
+    "href": "math-camp-pages/linear-algebra/la-15.html",
+    "title": "Chapter 15: Eigenvectors and eigenvalues",
+    "section": "",
+    "text": "Quarto enables you to weave together content and executable code into a finished document. To learn more about Quarto see https://quarto.org."
+  },
+  {
+    "objectID": "math-camp-pages/linear-algebra/la-15.html#running-code",
+    "href": "math-camp-pages/linear-algebra/la-15.html#running-code",
+    "title": "Chapter 15: Eigenvectors and eigenvalues",
+    "section": "Running Code",
+    "text": "Running Code\nWhen you click the Render button a document will be generated that includes both content and the output of embedded code. You can embed code like this:\n\n1 + 1\n\n[1] 2\n\n\nYou can add options to executable code like this\n\n\n[1] 4\n\n\nThe echo: false option disables the printing of code (only output is displayed)."
+  },
+  {
+    "objectID": "math-camp-pages/linear-algebra/la-05.html",
+    "href": "math-camp-pages/linear-algebra/la-05.html",
+    "title": "Chapter 5: Matrix multiplication",
+    "section": "",
+    "text": "Quarto enables you to weave together content and executable code into a finished document. To learn more about Quarto see https://quarto.org."
+  },
+  {
+    "objectID": "math-camp-pages/linear-algebra/la-05.html#running-code",
+    "href": "math-camp-pages/linear-algebra/la-05.html#running-code",
+    "title": "Chapter 5: Matrix multiplication",
+    "section": "Running Code",
+    "text": "Running Code\nWhen you click the Render button a document will be generated that includes both content and the output of embedded code. You can embed code like this:\n\n1 + 1\n\n[1] 2\n\n\nYou can add options to executable code like this\n\n\n[1] 4\n\n\nThe echo: false option disables the printing of code (only output is displayed)."
+  },
+  {
+    "objectID": "math-camp-pages/linear-algebra/la-11.html",
+    "href": "math-camp-pages/linear-algebra/la-11.html",
+    "title": "Chapter 11: Cross Products",
+    "section": "",
+    "text": "Quarto enables you to weave together content and executable code into a finished document. To learn more about Quarto see https://quarto.org."
+  },
+  {
+    "objectID": "math-camp-pages/linear-algebra/la-11.html#running-code",
+    "href": "math-camp-pages/linear-algebra/la-11.html#running-code",
+    "title": "Chapter 11: Cross Products",
+    "section": "Running Code",
+    "text": "Running Code\nWhen you click the Render button a document will be generated that includes both content and the output of embedded code. You can embed code like this:\n\n1 + 1\n\n[1] 2\n\n\nYou can add options to executable code like this\n\n\n[1] 4\n\n\nThe echo: false option disables the printing of code (only output is displayed)."
+  },
+  {
+    "objectID": "math-camp-pages/linear-algebra/la-10.html",
+    "href": "math-camp-pages/linear-algebra/la-10.html",
+    "title": "Chapter 10: Dot products and duality",
+    "section": "",
+    "text": "Quarto enables you to weave together content and executable code into a finished document. To learn more about Quarto see https://quarto.org."
+  },
+  {
+    "objectID": "math-camp-pages/linear-algebra/la-10.html#running-code",
+    "href": "math-camp-pages/linear-algebra/la-10.html#running-code",
+    "title": "Chapter 10: Dot products and duality",
+    "section": "Running Code",
+    "text": "Running Code\nWhen you click the Render button a document will be generated that includes both content and the output of embedded code. You can embed code like this:\n\n1 + 1\n\n[1] 2\n\n\nYou can add options to executable code like this\n\n\n[1] 4\n\n\nThe echo: false option disables the printing of code (only output is displayed)."
+  },
+  {
+    "objectID": "math-camp-pages/linear-algebra/la-04.html",
+    "href": "math-camp-pages/linear-algebra/la-04.html",
+    "title": "Chapter 3: Linear Transformations and Matrices",
+    "section": "",
+    "text": "Quarto enables you to weave together content and executable code into a finished document. To learn more about Quarto see https://quarto.org."
+  },
+  {
+    "objectID": "math-camp-pages/linear-algebra/la-04.html#running-code",
+    "href": "math-camp-pages/linear-algebra/la-04.html#running-code",
+    "title": "Chapter 3: Linear Transformations and Matrices",
+    "section": "Running Code",
+    "text": "Running Code\nWhen you click the Render button a document will be generated that includes both content and the output of embedded code. You can embed code like this:\n\n1 + 1\n\n[1] 2\n\n\nYou can add options to executable code like this\n\n\n[1] 4\n\n\nThe echo: false option disables the printing of code (only output is displayed)."
+  },
+  {
+    "objectID": "math-camp-pages/linear-algebra/la-12.html",
+    "href": "math-camp-pages/linear-algebra/la-12.html",
+    "title": "Chapter 12: Cross products as transformations",
+    "section": "",
+    "text": "Quarto enables you to weave together content and executable code into a finished document. To learn more about Quarto see https://quarto.org."
+  },
+  {
+    "objectID": "math-camp-pages/linear-algebra/la-12.html#running-code",
+    "href": "math-camp-pages/linear-algebra/la-12.html#running-code",
+    "title": "Chapter 12: Cross products as transformations",
+    "section": "Running Code",
+    "text": "Running Code\nWhen you click the Render button a document will be generated that includes both content and the output of embedded code. You can embed code like this:\n\n1 + 1\n\n[1] 2\n\n\nYou can add options to executable code like this\n\n\n[1] 4\n\n\nThe echo: false option disables the printing of code (only output is displayed)."
+  },
+  {
+    "objectID": "math-camp-pages/linear-algebra/la-06.html",
+    "href": "math-camp-pages/linear-algebra/la-06.html",
+    "title": "Chapter 6: Three-dimensional linear transformations",
+    "section": "",
+    "text": "Quarto enables you to weave together content and executable code into a finished document. To learn more about Quarto see https://quarto.org."
+  },
+  {
+    "objectID": "math-camp-pages/linear-algebra/la-06.html#running-code",
+    "href": "math-camp-pages/linear-algebra/la-06.html#running-code",
+    "title": "Chapter 6: Three-dimensional linear transformations",
+    "section": "Running Code",
+    "text": "Running Code\nWhen you click the Render button a document will be generated that includes both content and the output of embedded code. You can embed code like this:\n\n1 + 1\n\n[1] 2\n\n\nYou can add options to executable code like this\n\n\n[1] 4\n\n\nThe echo: false option disables the printing of code (only output is displayed)."
+  },
+  {
+    "objectID": "math-camp-pages/linear-algebra/la-07.html",
+    "href": "math-camp-pages/linear-algebra/la-07.html",
+    "title": "Chapter 7: The determinant",
+    "section": "",
+    "text": "Quarto enables you to weave together content and executable code into a finished document. To learn more about Quarto see https://quarto.org."
+  },
+  {
+    "objectID": "math-camp-pages/linear-algebra/la-07.html#running-code",
+    "href": "math-camp-pages/linear-algebra/la-07.html#running-code",
+    "title": "Chapter 7: The determinant",
+    "section": "Running Code",
+    "text": "Running Code\nWhen you click the Render button a document will be generated that includes both content and the output of embedded code. You can embed code like this:\n\n1 + 1\n\n[1] 2\n\n\nYou can add options to executable code like this\n\n\n[1] 4\n\n\nThe echo: false option disables the printing of code (only output is displayed)."
+  },
+  {
+    "objectID": "math-camp-pages/linear-algebra/la-13.html",
+    "href": "math-camp-pages/linear-algebra/la-13.html",
+    "title": "Chapter 13: Cramer’s rule",
+    "section": "",
+    "text": "Quarto enables you to weave together content and executable code into a finished document. To learn more about Quarto see https://quarto.org."
+  },
+  {
+    "objectID": "math-camp-pages/linear-algebra/la-13.html#running-code",
+    "href": "math-camp-pages/linear-algebra/la-13.html#running-code",
+    "title": "Chapter 13: Cramer’s rule",
+    "section": "Running Code",
+    "text": "Running Code\nWhen you click the Render button a document will be generated that includes both content and the output of embedded code. You can embed code like this:\n\n1 + 1\n\n[1] 2\n\n\nYou can add options to executable code like this\n\n\n[1] 4\n\n\nThe echo: false option disables the printing of code (only output is displayed)."
+  },
+  {
+    "objectID": "math-camp-pages/calculus/calculus-1.html",
+    "href": "math-camp-pages/calculus/calculus-1.html",
+    "title": "Chapter 1: The Essence of Calculus",
+    "section": "",
+    "text": "Link to the YouTube video\nThis video is all about \\(\\pi r^2\\) and where it might come from. Will we discover how pi was figured out?\n“Math has a tendency to reward you when you respect its ____________” Symmetries\nCutting a cirlce into concentric rings. You flatten them out. What shape do you get and what’s its area?\nYou’d get trapezoids, but we’ll represent them as rectangles. Their length is \\(2\\pi r_i\\) where \\(r_i\\) is the radius of the ith concentric circle and its with is \\(dr\\).\nWe’ll discover integrals, derivatives, and the fact that these two are opposites.\nChapter 2: The Paradox of the Derivative https://youtu.be/9vKqVkMQHKk\nChapter 3: Derivatives Formulas through Geometry https://youtu.be/S0_qX4VJhMQ\nChapter 4: Visualizing the Chain Rule and Product Rule https://youtu.be/YG15m2VwSjA\nChapter 5: What’s so special about Euler’s Number \\(e\\) https://youtu.be/m2MIpDrF7Es\nChapter 6: Implicit Differentiation https://youtu.be/qb40J4N1fa4\nChapter 7: Limits, L’Hopital, Epsilon-Delta Definition https://youtu.be/kfF40MiS7zA\nChapter 8: Integration and the Fundamental Theorem of Calculus https://youtu.be/rfG8ce4nNh0\nChapter 9: What does Area have to do with slope? https://youtu.be/FnJqaIESC2s"
+  },
+  {
+    "objectID": "math-camp-pages/calculus/calculus-11.html",
+    "href": "math-camp-pages/calculus/calculus-11.html",
+    "title": "Chapter 11: Taylor Series",
+    "section": "",
+    "text": "For each of these you should\n\nlink to youtube video\n\n\nhave two versions\n\n\nan “essentials” version that is mostly a recap\nand a ‘ad astra’ version that goes deeper\n\n\nuse in econometrics and machine learning\nnext step\n\n\n\nQ: In the video, Grant refers to Taylor polynomials as approximations of functions. Can you flesh that out? A: The function being approximated is usually a non-polynomial function and a Taylor polynomial is … a polynomial.\nQ: Abstractly, what form does a quadratic approximation take? A: \\(f(x) \\approx c_0 + c_1 x + c_2 x^2\\)\nQ: Can you then guess what forms a linear and cubic approximation will take, respectively? A: A linear approximation would be \\(f(x) \\approx c_0 + c_1 x\\) (classic \\(a + mx\\) line formula), and a cubic approximation \\(f(x) \\approx c_0 + c_1 x + c_2 x^2 + c_3 x^3\\)\nQ: Now, using summation notation can you write out the form of an nth degree approximation of \\(f(x)\\)? A: \\[f(x) \\approx \\sum_{i=0}^n c_ix^i\\]\nQ: Can you recapitulate the process that gave \\(1 - \\frac{x^2}2\\) as the approximation of \\(\\cos x\\) near 0? A: You can go to the video at 5:40 to check yourself. A: First, you have to remember that it’s a quadratic approximation, so your template is \\(\\cos x \\approx c_0 + c_1 x + c_2 x^2\\). If you had forgotten that (or don’t see that), note that \\(1 - \\frac{x^2}2 = 1 + 0 x + - \\frac 12 x\\), meaning that \\(c_0 = 1,\\ c_1 = 0,\\ c_2 = -\\frac 12\\). Your goal here is to ‘fit’ the \\(c_i\\) parameters (a fancy machine-learning inspired way of saying that you’re choosing the \\(c_i\\) values that give you the best approximation). Now, you need \\(\\cos 0 = c_0 + c_1 (0) + c_2 (0)^2 \\\\ 1 = c_0 + 0 + 0\\), so \\(c_0 = 1\\). Then, to ensure that the rate of change (slope, derivative) of the approximation is the same as the rate of change of cosine, you take the derivatives of both: $ - x = c_1 + 2 c_2 x$ and evaluate at zero: $ - = c_1 + 2 c_2 \\ 0 = c_1$. So now we have \\(c_0 = 1,\\ c_1 = 0\\). We also want their second derivatives to be the same at zero, so we take the second derivatives of both: \\(- \\cos x = 2 c_2\\) and evaluate at zero: \\(- \\cos 0 = 2 c_2 \\\\ -1 = 2c_2\\), meaning that \\(c_2 = - \\frac 12\\)\nQ: Generally, how do you make an approximation better? Can you think of any caveats? A: Increasing the degree of the polynomial makes the approximation better, usually.\nThere are two ways to understand the ‘caveat’ tag. First, remember that the value of approximations generally is that they’re simpler, so having a high degree polynomial might defeat the purpose of the approximation enterprise. The other caveat has to do with divergent series (see below).\nQ: GS has an \\(X \\rightarrow Y\\) (where \\(X\\) is the input and \\(Y\\) is the output) diagram for summarizing what Taylor polynomials are all about. From that vague clue, can you remember what it is? A: They take in derivative information at a point and give back approximations of the function’s output.\nQ: Find the linear approximation of \\(f(x) = 5 - 2x + 3x^2\\) A: As a note, if you’ve taken calculus before you’ll remember that the \\(3x^2\\) term ‘dominates’ the output as \\(x \\rightarrow \\pm \\infty\\), meaning that the linear approximation will be extremely bad (we lopped off the most relevant part!!). That’s why it’s important to occasionally remember that we’re approximating outputs for values near the expansion point, which in this case is zero. And notice that around 0, \\(3x^2\\), the term that ends up dominating, is actually ‘less relevant’ because squaring a value \\(x\\) where \\(|x| < 1\\) and when \\(|x| << 1\\), \\(|x^2| << |x|\\)\nQ: Find the quadratic approximation of \\(f(x) = 5 - 2x + 3x^2\\) A: The first thing you’d ideally have remembered is that, as your polynomial expansions get higher in degree, the lower degree part doesn’t change. So [insert previous bit] You could also notice that \\(5 - 2x + 3x^2\\) is already in the ‘template’ form of \\(c_0 + c_1 x + c_2 x^2\\). There was no work to do! The general point is that an nth degree Taylor polynomial ‘approximation’ of an nth degree polynomial function is just the original function\nQ: Here’s a harder one. Find the cubic approximation of \\(\\ln x\\) A:\nConvergence Divergence."
+  },
+  {
+    "objectID": "math-camp-pages/calculus/calculus-12.html",
+    "href": "math-camp-pages/calculus/calculus-12.html",
+    "title": "Chapter 12: The Other Way to Visualize Derivatives",
+    "section": "",
+    "text": "for a previous video\nThe derivative of a function is a new function that for every input returns the slope at that point.\n\n\n\nhttps://www.3blue1brown.com/lessons/derivatives-and-transforms\nWhat does Grant call this generalized way of understanding derivatives? “The transformational view”\nIn what way will it be more general? It “generalize[s] calculus beyond functions whose inputs and output are simply numbers.” That is, functions whose inputs and outputs are real numbers.\nCan you complete this phrase from the video, I’d encourage you not think of this derivative-as-slope idea as being the definition of the derivative; instead think of the derivative as … ‘… as asking how sensitive is the function to tiny nudges around a given input.’ Interestingly he then goes on to show a picture of mapping numbers on a number line to their corresponding number on a different number line … seems like reals to reals!\nQ: In your own words, what’s this ‘stretch/squish’ understanding of the derivative? A: ‘If you take a small area around a point on a number line \\([x_0 -a, x_0 + a]\\), the derivative of at that point is about how much those points are being stretched (if \\(|f'(x_0)| > 1\\)) or squished (if \\(|f'(x_0)| < 1\\)) on the ’output’ number line. So, they become spread out if the function stretches inputs around \\(x_0\\) and they become contracted if the derivative is\nQ: In this numberline-to-numberline ‘transformational view’ hat does it look like to have a derivative of zero? A: It looks as if the points just stack atop each other. Note: he does x^2, you should do x^3 + 3x (wait, how does that never have a derivative of zero?!)\nWhat are the two kinds of fixed points? That is, what are their respective names and what defines them? A: Stable and unstable fixed points."
+  },
+  {
+    "objectID": "math-camp-homepage.html",
+    "href": "math-camp-homepage.html",
+    "title": "3B1B Math Camp",
+    "section": "",
+    "text": "Here’s a\nRight now these pages are in their beta version. This means that the notes for the 3Blue1Brown videos themselves are complete, but the statistics extensions are for the most part still outstanding."
+  },
+  {
+    "objectID": "math-camp-homepage.html#about",
+    "href": "math-camp-homepage.html#about",
+    "title": "3B1B Math Camp",
+    "section": "About",
+    "text": "About\nWho is this for? This is for anyone who needs to learn calculus and/or linear algebra for a statistics, econometrics, or machine learning program. The material is fundamental enough that none of it is irrelevant for any of those.\nThe specific occasion was a five-day intensive math camp I taught to incoming political science PhD students in the late summer of 2023. Because the whole idea of an intensive math camp that remediates years of quantitative training is folly, I decided that I want to create a resource that would last beyond the five days and be useful when the students were actually faced with difficult concepts in their second semester course.\nThe number of introductions to is vast and at this point anyone who creates their own introduction is, whether they know it or not, pursuing some type of vanity project. So I decided to pursue a slightly less vain project and piggyback on Grant Sanderson’s wonderful 3Blue1Brown series of videos on calculus and linear algebra."
+  },
+  {
+    "objectID": "math-camp-homepage.html#content",
+    "href": "math-camp-homepage.html#content",
+    "title": "3B1B Math Camp",
+    "section": "Content",
+    "text": "Content\n\nSelected Precalculus\n\n\nCalculus\n\n01: The Essence of Calculus\n\n\n\n\n\nLinear Algebra"
+  },
+  {
+    "objectID": "math-camp-homepage.html#further-resources",
+    "href": "math-camp-homepage.html#further-resources",
+    "title": "3B1B Math Camp",
+    "section": "Further resources",
+    "text": "Further resources\nFor the hurried I’d recommend\n\nJeff Gill’s Essential Mathematics for Political and Social Research\nCohen’s Linear Algebra\n\nAnd for those looking to delectate in the details, nothing beats MIT’s OpenCourse."
   }
 ]
