@@ -2,13 +2,12 @@ project:
   type: website
   output-dir: docs
 website:
-  title: ""
+  title: "Justin Dollman"
   navbar:
     right:
       - href: index.qmd
         text: Home
       - teaching.qmd
-      - research.qmd
       - math-camp-homepage.qmd
 
 format:

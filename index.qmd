@@ -1,5 +1,5 @@
 ---
-title: "Justin Dollman"
+title: ""
 image: hompg.gif
 about: 
   template: jolla
