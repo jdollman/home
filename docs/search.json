@@ -9,9 +9,9 @@
   {
     "objectID": "about.html",
     "href": "about.html",
-    "title": "About",
+    "title": "About Me",
     "section": "",
-    "text": "About this site\n\n1 + 1\n\n[1] 2"
+    "text": "Hello and welcome to this extremely minimally designed space. Sorry I didn’t make it nice for you – you deserve better.\nSince this site’s raison d’être is professional, I should say a word or two about me qua wage laborer. Currently, I’m employed by Stony Brook University as a graduate student in political science. There I’m working on my dissertation under the advisement of Michael Peress. If there’s (still) no tab on this site for ‘Research’ that means that its contents are still under lock and key. At Stony Brook I’ve had the pleasure of taking courses with such luminaries as Stanley Feldman, Andy Delton, Yanna Krupnikov, and Vittorio Merola. I’ve also taught a few ‘methods’ courses (coding in R, statistics, math camp, experiments in political science). Immediately before landing on the Ye Longe Isle of Bagels & Hockey Fanatics, I taught English for a few years in Lima, Peru. And before that, I triple majored in philosophy, psychology, and German at the University of Arkansas (with a year spent at Karl-Franzens Universität in Graz, Austria)."
   },
   {
     "objectID": "teaching.html",
@@ -81,7 +81,7 @@
     "href": "math-camp-pages/linear-algebra/la-02.html",
     "title": "Chapter 2: Vectors, what even are they?",
     "section": "",
-    "text": "Quarto enables you to weave together content and executable code into a finished document. To learn more about Quarto see https://quarto.org."
+    "text": "The three perspectives on what we mean by “vector”\nLet’s ignore the mathematician’s perspective\nAn arrow inside a coordinate system\ntail on the origin – that’s unlike the physics perspective\nThis is something hinted at in the video. How would you go from the vector-as-arrow perspective to the vector-as-list-of-numbers perspective?\nThe arrow’s “tip” lies at a certain coordinate in \\(n\\)-space. That coordinate can be represented as a list of numbers.\nWhat’s the difference between \\(\\begin{pmatrix} 6 & 9 \\end{pmatrix}\\) and \\(\\begin{bmatrix} 6 \\\\ 9 \\end{bmatrix}\\)? The former is a point and the latter is a vector.\nVector addition.\nThe diagonal of the parallelogram (he doesn’t cover that – but you should)\nVector multiplication (scalar-vector multiplication)\nk > 1, 0 < k < 1 Scaling a vector, scalar\nGS says that, in LA, numbers go around scaling so much that it’s commong to use “number” and “scalar” interchangeably. Just to be clear, though the contents … maybe … IDK.\nI don’t think he mentions anything about vector notation!"
   },
   {
     "objectID": "math-camp-pages/linear-algebra/la-02.html#running-code",
@@ -95,7 +95,7 @@
     "href": "math-camp-pages/linear-algebra/la-16.html",
     "title": "Chapter 16: A quick trick for computing eigenvalues",
     "section": "",
-    "text": "Quarto enables you to weave together content and executable code into a finished document. To learn more about Quarto see https://quarto.org."
+    "text": "This was brought up at breakneck speed, but can you remember what a matrix’s characteristic polynomial is?\nHow are eigenvalues related to a matrix’s characteristic polynomial? Eigenvalues are the roots of a matrix’s characteristic polynomial.\nWhat was the trace of a matrix? If your matrix is \\[\\begin{bmatrix} a & b \\\\ c & d \\end{bmatrix}\\], then it’s \\(a + d\\).\nOk, but most matrices are bigger than 2x2. How would you generalize the concept of a \\(\\text{tr}(\\textbf A)\\)? The sum of \\(\\text{diag}(\\textbf A)\\), or, \\[\\sum_{i=1}^n a_{ii}\\]\nHow is a matrix’s trace related to its eigenvalues? Note: there are two ways to answer, one is more straightforward, the other is more relevant to where we’re going\n\\(\\text{tr}(\\textbf A) = \\sum_{i=1}^n \\lambda_i\\). You can divide both sides by \\(n\\) to get \\(n^{-1}\\text{tr}(\\textbf A) = n^{-1}\\sum_{i=1}^n \\lambda_i = \\text{mean}(\\lambda_i)\\)\nIn the \\(\\textbf A \\in \\mathbb R^2\\) case, we have \\(a + d = \\lambda_1 + \\lambda_2\\) or \\(\\frac{a + d}2 = \\frac{\\lambda_1 + \\lambda_2}2\\)\nEnough trace for now. How is the determinant of a matrix related to its eigenvalues?\n\\[\\text{det}(\\textbf A) = \\Pi_{i=1}^n \\lambda_i\\]\nIn the \\(\\textbf A \\in \\mathbb R^2\\) case, we have \\(ad - bc = \\lambda_1 \\lambda_2\\)\nI need to go back and find out how he got that the eigenvalues are evenly spaced from … what?"
   },
   {
     "objectID": "math-camp-pages/linear-algebra/la-16.html#running-code",
@@ -123,7 +123,7 @@
     "href": "math-camp-pages/linear-algebra/la-15.html",
     "title": "Chapter 15: Eigenvectors and eigenvalues",
     "section": "",
-    "text": "Quarto enables you to weave together content and executable code into a finished document. To learn more about Quarto see https://quarto.org."
+    "text": "Very basic question here. What has eigenvectors/eigenvalues? A: Matrices (transformations)\nJust glancing at the transformation matrix \\[\\textbf A = \\begin{bmatrix} 3 & 0 \\\\ 4 & 8 \\end{bmatrix}\\], which vectors are going to stay on the line they span after the transformation \\(\\textbf A \\boldsymbol v\\)?\nAnswer: Vectors of the form \\(\\begin{bmatrix} 0 & j\\end{bmatrix}\\)\nWhat is an eigenvector’s eigenvalue? An eigenvalue is the factor by which the eigenvector is stretched or squished. It’s the eigenvector’s associated scalar.1\nHow can you interpret the eigenvector of a 3D transformation? A: This is a bit of a trick question. If its eigenvalue is 1, then that eigenvector is the axis of rotation of the transformation. Remember that rotations in the 2D plane didn’t have (real) eigenvalues!\nWhat is the equation that unites eigenvectors with eigenvalues? \\(\\textbf A \\vec{v} = \\lambda \\vec{v}\\)\nHow do you transform \\(\\textbf A \\vec{v} = \\lambda \\vec{v}\\) so that the left-hand side is matrix-vector multiplication (the right side already is!)? You insert an identity matrix! \\(\\textbf A \\vec{v} = \\lambda \\boldsymbol I_n\\vec{v}\\)\nWhat equation do you set up to solve for \\(\\vec{v} \\text{ and } \\lambda\\)? Hint: start with the result of the previous problem.\n\\(\\textbf A \\vec{v} = \\lambda \\boldsymbol I_n\\vec{v} \\\\ \\textbf A \\vec{v} - \\lambda \\boldsymbol I_n\\vec{v} = \\vec 0 \\\\ (\\textbf A - \\lambda \\boldsymbol I_n)\\vec{v} =\\vec 0\\)\nThen, since \\(\\vec{v} \\neq \\vec 0\\), we know that \\(\\text{det}(\\textbf A - \\lambda \\boldsymbol I_n) = 0\\).\nXXX Geometrically, why do we want \\(\\text{det}(\\textbf A - \\lambda \\boldsymbol I_n) = 0\\)? ???\nWhat’s a shear? https://en.wikipedia.org/wiki/Shear_mapping\n[There’s definitely stuff missing here]\nWhat’s the “eigen interpretation” of a diagonal matrix? Its columns are where the basis vectors end up. Importantly, they end up on the line that they originally spanned. This means that the diagonal entries (scalars) are the eigenvalues (the amount by which the basis vector is scaled).\nShow/prove to your own satisfaction why it is the case that the eigenvectors of a diagonal matrix are basis vectors and their eigenvalues are the diagonal entries of the matrix.\nWhat’s an eigenbasis?\nWhen can you (not) get an eigenbasis?\nHow do you get a matrix into its eigenbasis?\nHow does an eigenbasis help you exponentiate a matrix?\nTODO: Insert Markov example\nThere’s the problem to do at the end.\n\n\n\n\n\nFootnotes\n\n\nIn fact, I really think eigenvalue should have been “eigenscalar,” but that’s what they get for asking this Eigen guy to name it.↩︎"
   },
   {
     "objectID": "math-camp-pages/linear-algebra/la-15.html#running-code",
@@ -177,14 +177,14 @@
   {
     "objectID": "math-camp-pages/linear-algebra/la-04.html",
     "href": "math-camp-pages/linear-algebra/la-04.html",
-    "title": "Chapter 3: Linear Transformations and Matrices",
+    "title": "Chapter 4: Linear Transformations and Matrices",
     "section": "",
     "text": "Quarto enables you to weave together content and executable code into a finished document. To learn more about Quarto see https://quarto.org."
   },
   {
     "objectID": "math-camp-pages/linear-algebra/la-04.html#running-code",
     "href": "math-camp-pages/linear-algebra/la-04.html#running-code",
-    "title": "Chapter 3: Linear Transformations and Matrices",
+    "title": "Chapter 4: Linear Transformations and Matrices",
     "section": "Running Code",
     "text": "Running Code\nWhen you click the Render button a document will be generated that includes both content and the output of embedded code. You can embed code like this:\n\n1 + 1\n\n[1] 2\n\n\nYou can add options to executable code like this\n\n\n[1] 4\n\n\nThe echo: false option disables the printing of code (only output is displayed)."
   },
@@ -249,7 +249,7 @@
     "href": "math-camp-pages/calculus/calculus-1.html",
     "title": "Chapter 1: The Essence of Calculus",
     "section": "",
-    "text": "Link to the YouTube video\nThis video is all about \\(\\pi r^2\\) and where it might come from. Will we discover how pi was figured out?\n“Math has a tendency to reward you when you respect its ____________” Symmetries\nCutting a cirlce into concentric rings. You flatten them out. What shape do you get and what’s its area?\nYou’d get trapezoids, but we’ll represent them as rectangles. Their length is \\(2\\pi r_i\\) where \\(r_i\\) is the radius of the ith concentric circle and its with is \\(dr\\).\nWe’ll discover integrals, derivatives, and the fact that these two are opposites.\nChapter 2: The Paradox of the Derivative https://youtu.be/9vKqVkMQHKk\nChapter 3: Derivatives Formulas through Geometry https://youtu.be/S0_qX4VJhMQ\nChapter 4: Visualizing the Chain Rule and Product Rule https://youtu.be/YG15m2VwSjA\nChapter 5: What’s so special about Euler’s Number \\(e\\) https://youtu.be/m2MIpDrF7Es\nChapter 6: Implicit Differentiation https://youtu.be/qb40J4N1fa4\nChapter 7: Limits, L’Hopital, Epsilon-Delta Definition https://youtu.be/kfF40MiS7zA\nChapter 8: Integration and the Fundamental Theorem of Calculus https://youtu.be/rfG8ce4nNh0\nChapter 9: What does Area have to do with slope? https://youtu.be/FnJqaIESC2s"
+    "text": "Link to the YouTube video\nThis video is all about \\(\\pi r^2\\) and where it might come from. Will we discover how pi was figured out?\n\nQuestionsAnswers\n\n\n\n“Math has a tendency to reward you when you respect its ____________”\n\n\n\n\nSymmetries\n\n\n\n\nCutting a cirlce into concentric rings. You flatten them out. What shape do you get and what’s its area?\nYou’d get trapezoids, but we’ll represent them as rectangles. Their length is \\(2\\pi r_i\\) where \\(r_i\\) is the radius of the ith concentric circle and its with is \\(dr\\).\nWe’ll discover integrals, derivatives, and the fact that these two are opposites."
   },
   {
     "objectID": "math-camp-pages/calculus/calculus-11.html",
@@ -270,7 +270,7 @@
     "href": "math-camp-homepage.html",
     "title": "3B1B Math Camp",
     "section": "",
-    "text": "Here’s a\nRight now these pages are in their beta version. This means that the notes for the 3Blue1Brown videos themselves are complete, but the statistics extensions are for the most part still outstanding."
+    "text": "Below, dear reader, you’ll find the materials for a five-day intensive math camp I have in Fall 2023. Though it was imparted to incoming political science PhD students (a rather specific crowd), its fundamental nature makes it useful to anyone entering a statistics, econometrics, or machine learning program (or anyone who wants to learn the calculus and/or linear algebra necessary for such programs).\nEven before I created this, the number of math camp-y introductions to calculus and linear algebra was already vast beyond comprehension. At this point anyone who creates their own introduction is, whether they know it or not, pursuing some type of vanity project. So I decided to pursue a slightly less vain project and piggyback on Grant Sanderson’s wonderful 3Blue1Brown series of videos on calculus and linear algebra. His videos are both beautiful and profound. The only pedagogical issue is that there are neither questions nor problem sets associated with the material. Call me as old-fashioned as muddled sugar, bitters and whiskey, but it’s practice that makes perfect. So, under the ‘Content’ header below, there is a page for each of Sanderson’s videos that contains a mix of comprehension questions and problems to solve with pen and paper. As one says in this type of situation, any mistakes in the material below are my own responsibility and, in all likelihood, Grant Sanderson doesn’t even know about this material."
   },
   {
     "objectID": "math-camp-homepage.html#about",
@@ -284,7 +284,7 @@
     "href": "math-camp-homepage.html#content",
     "title": "3B1B Math Camp",
     "section": "Content",
-    "text": "Content\n\nSelected Precalculus\n\n\nCalculus\n\n01: The Essence of Calculus\n\n\n\n\n\nLinear Algebra"
+    "text": "Content\nVideos with an asterisk are those most relevant to a future practitioner of statistics.\nRight now these pages are in their beta version. This means that the notes for the 3Blue1Brown videos themselves are complete, but the statistics extensions are for the most part still outstanding.\nMost of the questions on the pages below are extremely basic. For my fellow Americans who went through mediocre middle and high schools, they’ll bring back memories of lazy “comprehension questions” handed out by teachers after a reading. Nevertheless, if you’ve ever consciously experienced the voraciousness of forgetfulness, you’ll know that even the basics aren’t immune. If you really want to learn the material, I’d recommend scheduling a reminder and going over the material again a week after the first time.1\nSo, en resumen, there are2 three sections in each of the following documents: comprehension questions reviewing the video, ‘canonical’ questions that anyone who says they’ve studied this subject would be expected to know, and a ‘going further’ section that is idiosyncratic to each video.\n\nCalculus\n\nThe essence of calculus*\nThe paradox of the derivative*\nDerivatives formulas through geometry*\nVisualizing the chain rule and product rule*\nWhat’s so special about Euler’s number \\(e\\)*\nImplicit differentiation\nLimits, L’Hopital, epsilon-delta definition\nIntegration and the fundamental theorem of calculus*\nWhat does area have to do with slope?*\nHigher order derivatives\nTaylor series*\nThe other way to visualize derivatives\n\n\n\nLinear Algebra\n\nThe essence of linear algebra*\nVectors*\nLinear combinations, span, and basis vectors*\nLinear transformations and matrices*\nMatrix multiplication*\nThree-dimensional linear transformations*\nThe determinant*\nInverse matrices, column space and null space*\nNonsquare matrices\nDot products and duality*\nCross Products\nCross products as transformations\nCramer’s rule\nChange of basis\nEigenvectors and eigenvalues*\nA quick trick for computing eigenvalues*\nAbstract vector spaces\n\n\n\nSelected Precalculus\nPrecalculus is an expansive grab bag of subjects (too many!) and it sounds inglorious (not sexy!). But you want to work with statistics, you should understand exponential and logarithmic functions much better than you probably do right now.\n\nNo materials of my own forthcoming. Just grab these dudes’ book.\n\n\n\nProbability\n\nComing … maybe? In the meantime I recommend David Morin’s Probability for the Enthusiastic Beginner. It’s maybe the best introductory book I’ve read to any topic ever."
   },
   {
     "objectID": "math-camp-homepage.html#further-resources",
@@ -292,5 +292,75 @@
     "title": "3B1B Math Camp",
     "section": "Further resources",
     "text": "Further resources\nFor the hurried I’d recommend\n\nJeff Gill’s Essential Mathematics for Political and Social Research\nCohen’s Linear Algebra\n\nAnd for those looking to delectate in the details, nothing beats MIT’s OpenCourse."
+  },
+  {
+    "objectID": "math-camp-pages/calculus/calculus-8.html",
+    "href": "math-camp-pages/calculus/calculus-8.html",
+    "title": "Chapter 8:",
+    "section": "",
+    "text": "YouTube video"
+  },
+  {
+    "objectID": "math-camp-pages/calculus/calculus-9.html",
+    "href": "math-camp-pages/calculus/calculus-9.html",
+    "title": "Chapter :",
+    "section": "",
+    "text": "YouTube video"
+  },
+  {
+    "objectID": "math-camp-pages/calculus/calculus-4.html",
+    "href": "math-camp-pages/calculus/calculus-4.html",
+    "title": "Chapter :",
+    "section": "",
+    "text": "YouTube video"
+  },
+  {
+    "objectID": "math-camp-pages/calculus/calculus-5.html",
+    "href": "math-camp-pages/calculus/calculus-5.html",
+    "title": "Chapter5 :",
+    "section": "",
+    "text": "YouTube video"
+  },
+  {
+    "objectID": "math-camp-pages/calculus/calculus-7.html",
+    "href": "math-camp-pages/calculus/calculus-7.html",
+    "title": "Chapter 7:",
+    "section": "",
+    "text": "YouTube video"
+  },
+  {
+    "objectID": "math-camp-pages/calculus/calculus-6.html",
+    "href": "math-camp-pages/calculus/calculus-6.html",
+    "title": "Chapter 6:",
+    "section": "",
+    "text": "YouTube video"
+  },
+  {
+    "objectID": "math-camp-pages/calculus/calculus-2.html",
+    "href": "math-camp-pages/calculus/calculus-2.html",
+    "title": "Chapter :",
+    "section": "",
+    "text": "YouTube video"
+  },
+  {
+    "objectID": "math-camp-pages/calculus/calculus-3.html",
+    "href": "math-camp-pages/calculus/calculus-3.html",
+    "title": "Chapter :",
+    "section": "",
+    "text": "YouTube video"
+  },
+  {
+    "objectID": "math-camp-pages/calculus/calculus-10.html",
+    "href": "math-camp-pages/calculus/calculus-10.html",
+    "title": "Chapter :",
+    "section": "",
+    "text": "YouTube video"
+  },
+  {
+    "objectID": "math-camp-homepage.html#further-linear-algebra-and-calculus-resources",
+    "href": "math-camp-homepage.html#further-linear-algebra-and-calculus-resources",
+    "title": "3B1B Math Camp",
+    "section": "Further linear algebra and calculus resources",
+    "text": "Further linear algebra and calculus resources\nImplicit in the idea of a math camp is that you’re prioritizing mere familiarity and speed over the depth and breadth that a sequence of ‘real’ courses would give. So, if you’re interested in these topics or your productivity and reputation as a researcher depends on competence in them, I encourage you to check out the resources below.\nFor the hurried I’d recommend the following two resources:\n\nJeff Gill’s Essential Mathematics for Political and Social Research covers much more than calculus and linear algebra. It has A+ examples and applications, as well.\nMike X Cohen’s Linear Algebra (Book, Udemy course)\n\nAnd for those looking to delight in the details, nothing beats MIT’s “OCW Scholar” courses. They contain everything you could want from an online course: videos of the lectures, recitation sessions, problem sets, and exams. The three most relevant for you would be:\n\nSingle Variable Calculus\nMultivariable Calculus\nLinear Algebra\n\nFor those looking a calculus textbook, I don’t think anything beats APEX’s Calculus. On the same page you can see the group has textbooks for precalculus, matrix algebra, and other topics as well."
   }
 ]

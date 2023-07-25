@@ -40,7 +40,7 @@ ul.task-list li input[type="checkbox"] {
 <script src="site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
 <link href="site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
-<link href="site_libs/bootstrap/bootstrap-dark.min.css" rel="prefetch" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
+<link href="site_libs/bootstrap/bootstrap-dark.min.css" rel="prefetch" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
@@ -61,11 +61,12 @@ ul.task-list li input[type="checkbox"] {
   }
 }</script>
 
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
 
 <link rel="stylesheet" href="styles.css">
 </head>
 
-<body class="nav-fixed">
+<body class="nav-fixed fullcontent">
 
 <div id="quarto-search-results"></div>
   <header id="quarto-header" class="headroom fixed-top">
@@ -82,8 +83,8 @@ ul.task-list li input[type="checkbox"] {
           <div class="collapse navbar-collapse" id="navbarCollapse">
             <ul class="navbar-nav navbar-nav-scroll ms-auto">
   <li class="nav-item">
-    <a class="nav-link" href="./index.html">
- <span class="menu-text">Home</span></a>
+    <a class="nav-link" href="./about.html">
+ <span class="menu-text">About Me</span></a>
   </li>  
   <li class="nav-item">
     <a class="nav-link" href="./teaching.html">
@@ -103,27 +104,12 @@ ul.task-list li input[type="checkbox"] {
     </nav>
 </header>
 <!-- content -->
-<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-full page-navbar">
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
 <!-- sidebar -->
 <!-- margin-sidebar -->
-    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
-        <nav id="TOC" role="doc-toc" class="toc-active">
-    <h2 id="toc-title">On this page</h2>
-   
-  <ul>
-  <li><a href="#about" id="toc-about" class="nav-link active" data-scroll-target="#about">About</a></li>
-  <li><a href="#content" id="toc-content" class="nav-link" data-scroll-target="#content">Content</a>
-  <ul class="collapse">
-  <li><a href="#selected-precalculus" id="toc-selected-precalculus" class="nav-link" data-scroll-target="#selected-precalculus">Selected Precalculus</a></li>
-  <li><a href="#calculus" id="toc-calculus" class="nav-link" data-scroll-target="#calculus">Calculus</a></li>
-  <li><a href="#linear-algebra" id="toc-linear-algebra" class="nav-link" data-scroll-target="#linear-algebra">Linear Algebra</a></li>
-  </ul></li>
-  <li><a href="#further-resources" id="toc-further-resources" class="nav-link" data-scroll-target="#further-resources">Further resources</a></li>
-  </ul>
-</nav>
-    </div>
+    
 <!-- main -->
-<main class="content column-page-left" id="quarto-document-content">
+<main class="content" id="quarto-document-content">
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
@@ -142,44 +128,94 @@ ul.task-list li input[type="checkbox"] {
 
 </header>
 
-<p>Here’s a</p>
-<p>Right now these pages are in their beta version. This means that the notes for the 3Blue1Brown videos themselves are complete, but the statistics extensions are for the most part still outstanding.</p>
-<section id="about" class="level2">
-<h2 class="anchored" data-anchor-id="about">About</h2>
-<p>Who is this for? This is for anyone who needs to learn calculus and/or linear algebra for a statistics, econometrics, or machine learning program. The material is fundamental enough that none of it is irrelevant for any of those.</p>
-<p>The specific occasion was a five-day intensive math camp I taught to incoming political science PhD students in the late summer of 2023. Because the whole idea of an intensive math camp that remediates years of quantitative training is folly, I decided that I want to create a resource that would last beyond the five days and be useful when the students were actually faced with difficult concepts in their second semester course.</p>
-<p>The number of introductions to is vast and at this point anyone who creates their own introduction is, whether they know it or not, pursuing some type of vanity project. So I decided to pursue a slightly less vain project and piggyback on Grant Sanderson’s wonderful 3Blue1Brown series of videos on calculus and linear algebra.</p>
-</section>
+<p>Below, dear reader, you’ll find the materials for a five-day intensive math camp I have in Fall 2023. Though it was imparted to incoming political science PhD students (a rather specific crowd), its fundamental nature makes it useful to anyone entering a statistics, econometrics, or machine learning program (or anyone who wants to learn the calculus and/or linear algebra necessary for such programs).</p>
+<p>Even before I created this, the number of math camp-y introductions to calculus and linear algebra was already vast beyond comprehension. At this point anyone who creates their own introduction is, whether they know it or not, pursuing some type of vanity project. So I decided to pursue a <em>slightly</em> less vain project and piggyback on Grant Sanderson’s wonderful 3Blue1Brown series of videos on calculus and linear algebra. His videos are both beautiful and profound. The only pedagogical issue is that there are neither questions nor problem sets associated with the material. Call me as old-fashioned as muddled sugar, bitters and whiskey, but it’s practice that makes perfect. So, under the ‘Content’ header below, there is a page for each of Sanderson’s videos that contains a mix of comprehension questions and problems to solve with pen and paper. As one says in this type of situation, any mistakes in the material below are my own responsibility and, in all likelihood, Grant Sanderson doesn’t even know about this material.</p>
 <section id="content" class="level2">
 <h2 class="anchored" data-anchor-id="content">Content</h2>
-<section id="selected-precalculus" class="level3">
-<h3 class="anchored" data-anchor-id="selected-precalculus">Selected Precalculus</h3>
-</section>
+<p>Videos with an asterisk are those <em>most</em> relevant to a future practitioner of statistics.</p>
+<p>Right now these pages are in their beta version. This means that the notes for the 3Blue1Brown videos themselves are complete, but the statistics extensions are for the most part still outstanding.</p>
+<p>Most of the questions on the pages below are extremely basic. For my fellow Americans who went through mediocre middle and high schools, they’ll bring back memories of lazy “comprehension questions” handed out by teachers after a reading. Nevertheless, if you’ve ever consciously experienced the voraciousness of forgetfulness, you’ll know that even the basics aren’t immune. If you really want to learn the material, I’d recommend scheduling a reminder and going over the material again a week after the first time.<a href="#fn1" class="footnote-ref" id="fnref1" role="doc-noteref"><sup>1</sup></a></p>
+<p>So, <em>en resumen</em>, there are<a href="#fn2" class="footnote-ref" id="fnref2" role="doc-noteref"><sup>2</sup></a> three sections in each of the following documents: comprehension questions reviewing the video, ‘canonical’ questions that anyone who says they’ve studied this subject would be expected to know, and a ‘going further’ section that is idiosyncratic to each video.</p>
 <section id="calculus" class="level3">
 <h3 class="anchored" data-anchor-id="calculus">Calculus</h3>
-<ul>
-<li><a href="./math-camp-pages/calculus/calculus-1.html">01: The Essence of Calculus</a></li>
-<li></li>
-<li></li>
-</ul>
+<ol type="1">
+<li><a href="./math-camp-pages/calculus/calculus-1.html">The essence of calculus</a>*</li>
+<li><a href="./math-camp-pages/calculus/calculus-2.html">The paradox of the derivative</a>*</li>
+<li><a href="./math-camp-pages/calculus/calculus-3.html">Derivatives formulas through geometry</a>*</li>
+<li><a href="./math-camp-pages/calculus/calculus-4.html">Visualizing the chain rule and product rule</a>*</li>
+<li><a href="./math-camp-pages/calculus/calculus-5.html">What’s so special about Euler’s number <span class="math inline">\(e\)</span></a>*</li>
+<li><a href="./math-camp-pages/calculus/calculus-6.html">Implicit differentiation</a></li>
+<li><a href="./math-camp-pages/calculus/calculus-7.html">Limits, L’Hopital, epsilon-delta definition</a></li>
+<li><a href="./math-camp-pages/calculus/calculus-8.html">Integration and the fundamental theorem of calculus</a>*</li>
+<li><a href="./math-camp-pages/calculus/calculus-9.html">What does area have to do with slope?</a>*</li>
+<li><a href="./math-camp-pages/calculus/calculus-10.html">Higher order derivatives</a></li>
+<li><a href="./math-camp-pages/calculus/calculus-11.html">Taylor series</a>*</li>
+<li><a href="./math-camp-pages/calculus/calculus-12.html">The other way to visualize derivatives</a></li>
+</ol>
 </section>
 <section id="linear-algebra" class="level3">
 <h3 class="anchored" data-anchor-id="linear-algebra">Linear Algebra</h3>
+<ol type="1">
+<li><a href="./math-camp-pages/linear-algebra/la-01.html">The essence of linear algebra</a>*</li>
+<li><a href="./math-camp-pages/linear-algebra/la-02.html">Vectors</a>*</li>
+<li><a href="./math-camp-pages/linear-algebra/la-03.html">Linear combinations, span, and basis vectors</a>*</li>
+<li><a href="./math-camp-pages/linear-algebra/la-04.html">Linear transformations and matrices</a>*</li>
+<li><a href="./math-camp-pages/linear-algebra/la-05.html">Matrix multiplication</a>*</li>
+<li><a href="./math-camp-pages/linear-algebra/la-06.html">Three-dimensional linear transformations</a>*</li>
+<li><a href="./math-camp-pages/linear-algebra/la-07.html">The determinant</a>*</li>
+<li><a href="./math-camp-pages/linear-algebra/la-08.html">Inverse matrices, column space and null space</a>*</li>
+<li><a href="./math-camp-pages/linear-algebra/la-09.html">Nonsquare matrices</a></li>
+<li><a href="./math-camp-pages/linear-algebra/la-10.html">Dot products and duality</a>*</li>
+<li><a href="./math-camp-pages/linear-algebra/la-11.html">Cross Products</a></li>
+<li><a href="./math-camp-pages/linear-algebra/la-12.html">Cross products as transformations</a></li>
+<li><a href="./math-camp-pages/linear-algebra/la-13.html">Cramer’s rule</a></li>
+<li><a href="./math-camp-pages/linear-algebra/la-14.html">Change of basis</a></li>
+<li><a href="./math-camp-pages/linear-algebra/la-15.html">Eigenvectors and eigenvalues</a>*</li>
+<li><a href="./math-camp-pages/linear-algebra/la-16.html">A quick trick for computing eigenvalues</a>*</li>
+<li><a href="./math-camp-pages/linear-algebra/la-17.html">Abstract vector spaces</a></li>
+</ol>
 </section>
-</section>
-<section id="further-resources" class="level2">
-<h2 class="anchored" data-anchor-id="further-resources">Further resources</h2>
-<p>For the hurried I’d recommend</p>
+<section id="selected-precalculus" class="level3">
+<h3 class="anchored" data-anchor-id="selected-precalculus">Selected Precalculus</h3>
+<p>Precalculus is an expansive grab bag of subjects (too many!) and it sounds inglorious (not sexy!). But you want to work with statistics, you should understand exponential and logarithmic functions much better than you probably do right now.</p>
 <ul>
-<li>Jeff Gill’s <a href="https://www.amazon.com/Essential-Mathematics-Political-Research-Analytical/dp/052168403X"><em>Essential Mathematics for Political and Social Research</em></a></li>
-<li>Cohen’s <em>Linear Algebra</em></li>
+<li>No materials of my own forthcoming. Just grab these dudes’ <a href="https://www.stitz-zeager.com/">book</a>.</li>
 </ul>
-<p>And for those looking to delectate in the details, nothing beats MIT’s OpenCourse.</p>
+</section>
+<section id="probability" class="level3">
+<h3 class="anchored" data-anchor-id="probability">Probability</h3>
+<ul>
+<li>Coming … maybe? In the meantime I recommend David Morin’s <a href="https://scholar.harvard.edu/david-morin/probability"><em>Probability for the Enthusiastic Beginner</em></a>. It’s maybe the best introductory book I’ve read to any topic ever.</li>
+</ul>
+</section>
+</section>
+<section id="further-linear-algebra-and-calculus-resources" class="level2">
+<h2 class="anchored" data-anchor-id="further-linear-algebra-and-calculus-resources">Further linear algebra and calculus resources</h2>
+<p>Implicit in the idea of a math camp is that you’re prioritizing mere familiarity and speed over the depth and breadth that a sequence of ‘real’ courses would give. So, if you’re interested in these topics or your productivity and reputation as a researcher depends on competence in them, I encourage you to check out the resources below.</p>
+<p>For the hurried I’d recommend the following two resources:</p>
+<ul>
+<li>Jeff Gill’s <a href="https.//www.amazon.com/Essential-Mathematics-Political-Research-Analytical/dp/052168403X"><em>Essential Mathematics for Political and Social Research</em></a> covers much more than calculus and linear algebra. It has A+ examples and applications, as well.</li>
+<li>Mike X Cohen’s <em>Linear Algebra</em> (<a href="https.//www.amazon.com/Linear-Algebra-Theory-Intuition-Code/dp/9083136604">Book</a>, <a href="https.//www.udemy.com/course/linear-algebra-theory-and-implementation/">Udemy course</a>)</li>
+</ul>
+<p>And for those looking to delight in the details, nothing beats MIT’s “OCW Scholar” courses. They contain everything you could want from an online course: videos of the lectures, recitation sessions, problem sets, and exams. The three most relevant for you would be:</p>
+<ul>
+<li><a href="https://ocw.mit.edu/courses/18-01sc-single-variable-calculus-fall-2010/">Single Variable Calculus</a></li>
+<li><a href="https://ocw.mit.edu/courses/18-02sc-multivariable-calculus-fall-2010/">Multivariable Calculus</a></li>
+<li><a href="https://ocw.mit.edu/courses/18-06sc-linear-algebra-fall-2011/">Linear Algebra</a></li>
+</ul>
+<p>For those looking a calculus textbook, I don’t think anything beats <a href="http://www.apexcalculus.com/">APEX’s Calculus</a>. On the same page you can see the group has textbooks for precalculus, matrix algebra, and other topics as well.</p>
 
 
 </section>
 
-</main> <!-- /main -->
+
+<div id="quarto-appendix" class="default"><section id="footnotes" class="footnotes footnotes-end-of-document" role="doc-endnotes"><h2 class="anchored quarto-appendix-heading">Footnotes</h2>
+
+<ol>
+<li id="fn1"><p>Well, if you <em>really</em> want to learn something you should get a spaced repetition program like Anki or FullRecall, but I’m not here to proselytize.<a href="#fnref1" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn2"><p><em>will be</em> (07/25/2023)<a href="#fnref2" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+</ol>
+</section></div></main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
 window.document.addEventListener("DOMContentLoaded", function (event) {
   const toggleBodyColorMode = (bsSheetEl) => {

@@ -20,69 +20,6 @@ ul.task-list li input[type="checkbox"] {
   margin: 0 0.8em 0.2em -1.6em;
   vertical-align: middle;
 }
-pre > code.sourceCode { white-space: pre; position: relative; }
-pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
-pre > code.sourceCode > span:empty { height: 1.2em; }
-.sourceCode { overflow: visible; }
-code.sourceCode > span { color: inherit; text-decoration: inherit; }
-div.sourceCode { margin: 1em 0; }
-pre.sourceCode { margin: 0; }
-@media screen {
-div.sourceCode { overflow: auto; }
-}
-@media print {
-pre > code.sourceCode { white-space: pre-wrap; }
-pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
-}
-pre.numberSource code
-  { counter-reset: source-line 0; }
-pre.numberSource code > span
-  { position: relative; left: -4em; counter-increment: source-line; }
-pre.numberSource code > span > a:first-child::before
-  { content: counter(source-line);
-    position: relative; left: -1em; text-align: right; vertical-align: baseline;
-    border: none; display: inline-block;
-    -webkit-touch-callout: none; -webkit-user-select: none;
-    -khtml-user-select: none; -moz-user-select: none;
-    -ms-user-select: none; user-select: none;
-    padding: 0 4px; width: 4em;
-    color: #aaaaaa;
-  }
-pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
-div.sourceCode
-  {   }
-@media screen {
-pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
-}
-code span.al { color: #ff0000; font-weight: bold; } /* Alert */
-code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
-code span.at { color: #7d9029; } /* Attribute */
-code span.bn { color: #40a070; } /* BaseN */
-code span.bu { color: #008000; } /* BuiltIn */
-code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
-code span.ch { color: #4070a0; } /* Char */
-code span.cn { color: #880000; } /* Constant */
-code span.co { color: #60a0b0; font-style: italic; } /* Comment */
-code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
-code span.do { color: #ba2121; font-style: italic; } /* Documentation */
-code span.dt { color: #902000; } /* DataType */
-code span.dv { color: #40a070; } /* DecVal */
-code span.er { color: #ff0000; font-weight: bold; } /* Error */
-code span.ex { } /* Extension */
-code span.fl { color: #40a070; } /* Float */
-code span.fu { color: #06287e; } /* Function */
-code span.im { color: #008000; font-weight: bold; } /* Import */
-code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
-code span.kw { color: #007020; font-weight: bold; } /* Keyword */
-code span.op { color: #666666; } /* Operator */
-code span.ot { color: #007020; } /* Other */
-code span.pp { color: #bc7a00; } /* Preprocessor */
-code span.sc { color: #4070a0; } /* SpecialChar */
-code span.ss { color: #bb6688; } /* SpecialString */
-code span.st { color: #4070a0; } /* String */
-code span.va { color: #19177c; } /* Variable */
-code span.vs { color: #4070a0; } /* VerbatimString */
-code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
 </style>
 
 
@@ -124,6 +61,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
   }
 }</script>
 
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
 
 <link rel="stylesheet" href="../../styles.css">
 </head>
@@ -144,10 +82,6 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </button>
           <div class="collapse navbar-collapse" id="navbarCollapse">
             <ul class="navbar-nav navbar-nav-scroll ms-auto">
-  <li class="nav-item">
-    <a class="nav-link" href="../../index.html">
- <span class="menu-text">Home</span></a>
-  </li>  
   <li class="nav-item">
     <a class="nav-link" href="../../teaching.html">
  <span class="menu-text">Teaching</span></a>
@@ -174,8 +108,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#quarto" id="toc-quarto" class="nav-link active" data-scroll-target="#quarto">Quarto</a></li>
-  <li><a href="#running-code" id="toc-running-code" class="nav-link" data-scroll-target="#running-code">Running Code</a></li>
+  <li><a href="#section" id="toc-section" class="nav-link active" data-scroll-target="#section"></a></li>
   </ul>
 </nav>
     </div>
@@ -199,31 +132,40 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 
 </header>
 
-<section id="quarto" class="level2">
-<h2 class="anchored" data-anchor-id="quarto">Quarto</h2>
-<p>Quarto enables you to weave together content and executable code into a finished document. To learn more about Quarto see <a href="https://quarto.org" class="uri">https://quarto.org</a>.</p>
-</section>
-<section id="running-code" class="level2">
-<h2 class="anchored" data-anchor-id="running-code">Running Code</h2>
-<p>When you click the <strong>Render</strong> button a document will be generated that includes both content and the output of embedded code. You can embed code like this:</p>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="dv">1</span> <span class="sc">+</span> <span class="dv">1</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code>[1] 2</code></pre>
-</div>
-</div>
-<p>You can add options to executable code like this</p>
-<div class="cell">
-<div class="cell-output cell-output-stdout">
-<pre><code>[1] 4</code></pre>
-</div>
-</div>
-<p>The <code>echo: false</code> option disables the printing of code (only output is displayed).</p>
+<section id="section" class="level1">
+<h1></h1>
+<p>Very basic question here. <em>What</em> has eigenvectors/eigenvalues? A: Matrices (transformations)</p>
+<p>Just glancing at the transformation matrix <span class="math display">\[\textbf A = \begin{bmatrix} 3 &amp; 0 \\ 4 &amp; 8 \end{bmatrix}\]</span>, which vectors are going to stay on the line they span after the transformation <span class="math inline">\(\textbf A \boldsymbol v\)</span>?</p>
+<p>Answer: Vectors of the form <span class="math inline">\(\begin{bmatrix} 0 &amp; j\end{bmatrix}\)</span></p>
+<p>What is an eigenvector’s eigenvalue? An eigenvalue is the factor by which the eigenvector is stretched or squished. It’s the eigenvector’s associated scalar.<a href="#fn1" class="footnote-ref" id="fnref1" role="doc-noteref"><sup>1</sup></a></p>
+<p>How can you interpret the eigenvector of a 3D transformation? A: This is a bit of a trick question. If its eigenvalue is 1, then that eigenvector is the axis of rotation of the transformation. Remember that rotations in the 2D plane didn’t have (real) eigenvalues!</p>
+<p>What is <em>the</em> equation that unites eigenvectors with eigenvalues? <span class="math inline">\(\textbf A \vec{v} = \lambda \vec{v}\)</span></p>
+<p>How do you transform <span class="math inline">\(\textbf A \vec{v} = \lambda \vec{v}\)</span> so that the left-hand side is matrix-vector multiplication (the right side already is!)? You insert an identity matrix! <span class="math inline">\(\textbf A \vec{v} = \lambda \boldsymbol I_n\vec{v}\)</span></p>
+<p>What equation do you set up to solve for <span class="math inline">\(\vec{v} \text{ and } \lambda\)</span>? Hint: start with the result of the previous problem.</p>
+<p><span class="math inline">\(\textbf A \vec{v} = \lambda \boldsymbol I_n\vec{v} \\ \textbf A \vec{v} - \lambda \boldsymbol I_n\vec{v} = \vec 0 \\ (\textbf A - \lambda \boldsymbol I_n)\vec{v} =\vec 0\)</span></p>
+<p>Then, since <span class="math inline">\(\vec{v} \neq \vec 0\)</span>, we know that <span class="math inline">\(\text{det}(\textbf A - \lambda \boldsymbol I_n) = 0\)</span>.</p>
+<p>XXX Geometrically, why do we want <span class="math inline">\(\text{det}(\textbf A - \lambda \boldsymbol I_n) = 0\)</span>? ???</p>
+<p>What’s a shear? https://en.wikipedia.org/wiki/Shear_mapping</p>
+<p>[There’s definitely stuff missing here]</p>
+<p>What’s the “eigen interpretation” of a diagonal matrix? Its columns are where the basis vectors end up. Importantly, they end up on the line that they originally spanned. This means that the diagonal entries (scalars) are the eigenvalues (the amount by which the basis vector is scaled).</p>
+<p>Show/prove to your own satisfaction why it is the case that the eigenvectors of a diagonal matrix are basis vectors and their eigenvalues are the diagonal entries of the matrix.</p>
+<p>What’s an eigenbasis?</p>
+<p>When can you (not) get an eigenbasis?</p>
+<p>How do you get a matrix into its eigenbasis?</p>
+<p>How does an eigenbasis help you exponentiate a matrix?</p>
+<p>TODO: Insert Markov example</p>
+<p>There’s the problem to do at the end.</p>
 
 
 </section>
 
-</main> <!-- /main -->
+
+<div id="quarto-appendix" class="default"><section id="footnotes" class="footnotes footnotes-end-of-document" role="doc-endnotes"><h2 class="anchored quarto-appendix-heading">Footnotes</h2>
+
+<ol>
+<li id="fn1"><p>In fact, I really think eigenvalue should have been “eigenscalar,” but that’s what they get for asking this <em>Eigen</em> guy to name it.<a href="#fnref1" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+</ol>
+</section></div></main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
 window.document.addEventListener("DOMContentLoaded", function (event) {
   const toggleBodyColorMode = (bsSheetEl) => {

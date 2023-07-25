@@ -3,23 +3,55 @@ title: "Chapter 15: Eigenvectors and eigenvalues"
 format: html
 ---
 
-## Quarto
+#
 
-Quarto enables you to weave together content and executable code into a finished document. To learn more about Quarto see <https://quarto.org>.
+Very basic question here. *What* has eigenvectors/eigenvalues?
+A: Matrices (transformations)
 
-## Running Code
+Just glancing at the transformation matrix $$\textbf A = \begin{bmatrix} 3 & 0 \\ 4 & 8 \end{bmatrix}$$, which vectors are going to stay on the line they span after the transformation $\textbf A \boldsymbol v$?
 
-When you click the **Render** button a document will be generated that includes both content and the output of embedded code. You can embed code like this:
+Answer: Vectors of the form $\begin{bmatrix} 0 & j\end{bmatrix}$
 
-```{r}
-1 + 1
-```
+What is an eigenvector's eigenvalue?
+An eigenvalue is the factor by which the eigenvector is stretched or squished. It's the eigenvector's associated scalar.^[In fact, I really think eigenvalue should have been "eigenscalar," but that's what they get for asking this *Eigen* guy to name it.]
 
-You can add options to executable code like this 
+How can you interpret the eigenvector of a 3D transformation?
+A: This is a bit of a trick question. If its eigenvalue is 1, then that eigenvector is the axis of rotation of the transformation. Remember that rotations in the 2D plane didn't have (real) eigenvalues!
 
-```{r}
-#| echo: false
-2 * 2
-```
+What is *the* equation that unites eigenvectors with eigenvalues?
+$\textbf A \vec{v} = \lambda \vec{v}$
 
-The `echo: false` option disables the printing of code (only output is displayed).
+How do you transform $\textbf A \vec{v} = \lambda \vec{v}$ so that the left-hand side is matrix-vector multiplication (the right side already is!)?
+You insert an identity matrix! $\textbf A \vec{v} = \lambda \boldsymbol I_n\vec{v}$
+
+What equation do you set up to solve for $\vec{v} \text{ and } \lambda$? Hint: start with the result of the previous problem.
+
+$\textbf A \vec{v} = \lambda \boldsymbol I_n\vec{v} \\ \textbf A \vec{v} - \lambda \boldsymbol I_n\vec{v} = \vec 0 \\ (\textbf A  - \lambda \boldsymbol I_n)\vec{v} =\vec 0$
+
+Then, since $\vec{v} \neq \vec 0$, we know that $\text{det}(\textbf A  - \lambda \boldsymbol I_n) = 0$. 
+
+XXX
+Geometrically, why do we want $\text{det}(\textbf A  - \lambda \boldsymbol I_n) = 0$?
+???
+
+What's a shear?
+https://en.wikipedia.org/wiki/Shear_mapping
+
+[There's definitely stuff missing here]
+
+What's the "eigen interpretation" of a diagonal matrix?
+Its columns are where the basis vectors end up. Importantly, they end up on the line that they originally spanned. This means that the diagonal entries (scalars) are the eigenvalues (the amount by which the basis vector is scaled).
+
+Show/prove to your own satisfaction why it is the case that the eigenvectors of a diagonal matrix are basis vectors and their eigenvalues are the diagonal entries of the matrix.
+
+What's an eigenbasis?
+
+When can you (not) get an eigenbasis?
+
+How do you get a matrix into its eigenbasis?
+
+How does an eigenbasis help you exponentiate a matrix?
+
+TODO: Insert Markov example
+
+There's the problem to do at the end.

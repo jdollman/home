@@ -3,23 +3,32 @@ title: "Chapter 2: Vectors, what even are they?"
 format: html
 ---
 
-## Quarto
+# 
 
-Quarto enables you to weave together content and executable code into a finished document. To learn more about Quarto see <https://quarto.org>.
+The three perspectives on what we mean by "vector"
 
-## Running Code
+Let's ignore the mathematician's perspective
 
-When you click the **Render** button a document will be generated that includes both content and the output of embedded code. You can embed code like this:
+An arrow inside a coordinate system
 
-```{r}
-1 + 1
-```
+tail on the origin -- that's unlike the physics perspective
 
-You can add options to executable code like this 
+This is something hinted at in the video. How would you go from the vector-as-arrow perspective to the vector-as-list-of-numbers perspective?
 
-```{r}
-#| echo: false
-2 * 2
-```
+The arrow's "tip" lies at a certain coordinate in $n$-space. That **coordinate** can be represented as a list of numbers.
 
-The `echo: false` option disables the printing of code (only output is displayed).
+What's the difference between $\begin{pmatrix} 6 & 9 \end{pmatrix}$ and $\begin{bmatrix} 6 \\ 9 \end{bmatrix}$?
+The former is a *point* and the latter is a *vector*.
+
+Vector addition.
+
+The diagonal of the parallelogram (he doesn't cover that -- but you should)
+
+Vector multiplication (scalar-vector multiplication)
+
+k > 1, 0 < k < 1
+Scaling a vector, scalar
+
+GS says that, in LA, numbers go around scaling so much that it's commong to use "number" and "scalar" interchangeably. Just to be clear, though the contents ... maybe ... IDK.
+
+I don't think he mentions anything about vector notation!

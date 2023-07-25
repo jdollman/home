@@ -2,36 +2,78 @@
 title: "3B1B Math Camp"
 ---
 
-Here's a 
+Below, dear reader, you'll find the materials for a five-day intensive math camp I have in Fall 2023. Though it was imparted to incoming political science PhD students (a rather specific crowd), its fundamental nature makes it useful to anyone entering a statistics, econometrics, or machine learning program (or anyone who wants to learn the calculus and/or linear algebra necessary for such programs).
 
-Right now these pages are in their beta version. This means that the notes for the 3Blue1Brown videos themselves are complete, but the statistics extensions are for the most part still outstanding.
-
-## About
-
-Who is this for? This is for anyone who needs to learn calculus and/or linear algebra for a statistics, econometrics, or machine learning program. The material is fundamental enough that none of it is irrelevant for any of those.
-
-The specific occasion was a five-day intensive math camp I taught to incoming political science PhD students in the late summer of 2023. Because the whole idea of an intensive math camp that remediates years of quantitative training is folly, I decided that I want to create a resource that would last beyond the five days and be useful when the students were actually faced with difficult concepts in their second semester course.
-
-The number of introductions to is vast and at this point anyone who creates their own introduction is, whether they know it or not, pursuing some type of vanity project. So I decided to pursue a slightly less vain project and piggyback on Grant Sanderson’s wonderful 3Blue1Brown series of videos on calculus and linear algebra. 
+Even before I created this, the number of math camp-y introductions to calculus and linear algebra was already vast beyond comprehension. At this point anyone who creates their own introduction is, whether they know it or not, pursuing some type of vanity project. So I decided to pursue a *slightly* less vain project and piggyback on Grant Sanderson’s wonderful 3Blue1Brown series of videos on calculus and linear algebra. His videos are both beautiful and profound. The only pedagogical issue is that there are neither questions nor problem sets associated with the material. Call me as old-fashioned as muddled sugar, bitters and whiskey, but it's practice that makes perfect. So, under the 'Content' header below, there is a page for each of Sanderson's videos that contains a mix of comprehension questions and problems to solve with pen and paper. As one says in this type of situation, any mistakes in the material below are my own responsibility and, in all likelihood, Grant Sanderson doesn't even know about this material. 
 
 ## Content
 
-### Selected Precalculus
+Videos with an asterisk are those *most* relevant to a future practitioner of statistics.
+
+Right now these pages are in their beta version. This means that the notes for the 3Blue1Brown videos themselves are complete, but the statistics extensions are for the most part still outstanding.
+
+Most of the questions on the pages below are extremely basic. For my fellow Americans who went through mediocre middle and high schools, they'll bring back memories of lazy "comprehension questions" handed out by teachers after a reading. Nevertheless, if you've ever consciously experienced the voraciousness of forgetfulness, you'll know that even the basics aren't immune. If you really want to learn the material, I'd recommend scheduling a reminder and going over the material again a week after the first time.^[Well, if you *really* want to learn something you should get a spaced repetition program like Anki or FullRecall, but I'm not here to proselytize.]
+
+So, *en resumen*, there are^[*will be* (07/25/2023)] three sections in each of the following documents: comprehension questions reviewing the video, 'canonical' questions that anyone who says they've studied this subject would be expected to know, and a 'going further' section that is idiosyncratic to each video.
 
 ### Calculus
 
-* [01: The Essence of Calculus](math-camp-pages/calculus/calculus-1.qmd)
-*
-*
+1. [The essence of calculus](math-camp-pages/calculus/calculus-1.qmd)*
+2. [The paradox of the derivative](math-camp-pages/calculus/calculus-2.qmd)*
+3. [Derivatives formulas through geometry](math-camp-pages/calculus/calculus-3.qmd)*
+4. [Visualizing the chain rule and product rule](math-camp-pages/calculus/calculus-4.qmd)*
+5. [What's so special about Euler's number $e$](math-camp-pages/calculus/calculus-5.qmd)*
+6. [Implicit differentiation](math-camp-pages/calculus/calculus-6.qmd)
+7. [Limits, L'Hopital, epsilon-delta definition](math-camp-pages/calculus/calculus-7.qmd)
+8. [Integration and the fundamental theorem of calculus](math-camp-pages/calculus/calculus-8.qmd)*
+9. [What does area have to do with slope?](math-camp-pages/calculus/calculus-9.qmd)*
+10. [Higher order derivatives](math-camp-pages/calculus/calculus-10.qmd)
+11. [Taylor series](math-camp-pages/calculus/calculus-11.qmd)*
+12. [The other way to visualize derivatives](math-camp-pages/calculus/calculus-12.qmd)
 
 ### Linear Algebra
 
+1. [The essence of linear algebra](math-camp-pages/linear-algebra/la-01.qmd)*
+2. [Vectors](math-camp-pages/linear-algebra/la-02.qmd)*
+3. [Linear combinations, span, and basis vectors](math-camp-pages/linear-algebra/la-03.qmd)*
+4. [Linear transformations and matrices](math-camp-pages/linear-algebra/la-04.qmd)*
+5. [Matrix multiplication](math-camp-pages/linear-algebra/la-05.qmd)*
+6. [Three-dimensional linear transformations](math-camp-pages/linear-algebra/la-06.qmd)*
+7. [The determinant](math-camp-pages/linear-algebra/la-07.qmd)*
+8. [Inverse matrices, column space and null space](math-camp-pages/linear-algebra/la-08.qmd)*
+9. [Nonsquare matrices](math-camp-pages/linear-algebra/la-09.qmd)
+10. [Dot products and duality](math-camp-pages/linear-algebra/la-10.qmd)*
+11. [Cross Products](math-camp-pages/linear-algebra/la-11.qmd)
+12. [Cross products as transformations](math-camp-pages/linear-algebra/la-12.qmd)
+13. [Cramer’s rule](math-camp-pages/linear-algebra/la-13.qmd)
+14. [Change of basis](math-camp-pages/linear-algebra/la-14.qmd)
+15. [Eigenvectors and eigenvalues](math-camp-pages/linear-algebra/la-15.qmd)*
+16. [A quick trick for computing eigenvalues](math-camp-pages/linear-algebra/la-16.qmd)*
+17. [Abstract vector spaces](math-camp-pages/linear-algebra/la-17.qmd)
 
-## Further resources
+### Selected Precalculus
 
-For the hurried I'd recommend
+Precalculus is an expansive grab bag of subjects (too many!) and it sounds inglorious (not sexy!). But you want to work with statistics, you should understand exponential and logarithmic functions much better than you probably do right now.
 
-* Jeff Gill's [*Essential Mathematics for Political and Social Research*](https://www.amazon.com/Essential-Mathematics-Political-Research-Analytical/dp/052168403X)
-* Cohen's *Linear Algebra*
+* No materials of my own forthcoming. Just grab these dudes' [book](https://www.stitz-zeager.com/). 
 
-And for those looking to delectate in the details, nothing beats MIT's OpenCourse. 
+### Probability
+
+* Coming ... maybe? In the meantime I recommend David Morin's [*Probability for the Enthusiastic Beginner*](https://scholar.harvard.edu/david-morin/probability). It's maybe the best introductory book I've read to any topic ever.
+
+## Further linear algebra and calculus resources
+
+Implicit in the idea of a math camp is that you're prioritizing mere familiarity and speed over the depth and breadth that a sequence of 'real' courses would give. So, if you're interested in these topics or your productivity and reputation as a researcher depends on competence in them, I encourage you to check out the resources below. 
+
+For the hurried I'd recommend the following two resources:
+
+* Jeff Gill's [*Essential Mathematics for Political and Social Research*](https.//www.amazon.com/Essential-Mathematics-Political-Research-Analytical/dp/052168403X) covers much more than calculus and linear algebra. It has A+ examples and applications, as well. 
+* Mike X Cohen's *Linear Algebra* ([Book](https.//www.amazon.com/Linear-Algebra-Theory-Intuition-Code/dp/9083136604), [Udemy course](https.//www.udemy.com/course/linear-algebra-theory-and-implementation/))
+
+And for those looking to delight in the details, nothing beats MIT's "OCW Scholar" courses. They contain everything you could want from an online course: videos of the lectures, recitation sessions, problem sets, and exams. The three most relevant for you would be:
+
+* [Single Variable Calculus](https://ocw.mit.edu/courses/18-01sc-single-variable-calculus-fall-2010/)
+* [Multivariable Calculus](https://ocw.mit.edu/courses/18-02sc-multivariable-calculus-fall-2010/)
+* [Linear Algebra](https://ocw.mit.edu/courses/18-06sc-linear-algebra-fall-2011/)
+
+For those looking a calculus textbook, I don't think anything beats [APEX's Calculus](http://www.apexcalculus.com/). On the same page you can see the group has textbooks for precalculus, matrix algebra, and other topics as well.

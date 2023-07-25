@@ -1,0 +1,7 @@
+---
+title: "About Me"
+---
+
+Hello and welcome to this extremely minimally designed space. Sorry I didn't make it nice for you -- you deserve better.
+
+Since this site's *raison d'être* is professional, I should say a word or two about me *qua* wage laborer. Currently, I'm employed by Stony Brook University as a graduate student in political science. There I'm working on my dissertation under the advisement of Michael Peress. If there's (still) no tab on this site for 'Research' that means that its contents are still under lock and key. At Stony Brook I've had the pleasure of taking courses with such luminaries as Stanley Feldman, Andy Delton, Yanna Krupnikov, and Vittorio Merola. I've also taught a few 'methods' courses (coding in R, statistics, math camp, experiments in political science). Immediately before landing on the Ye Longe Isle of Bagels & Hockey Fanatics, I taught English for a few years in Lima, Peru. And before that, I triple majored in philosophy, psychology, and German at the University of Arkansas (with a year spent at Karl-Franzens Universität in Graz, Austria).
