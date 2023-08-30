@@ -7,7 +7,6 @@ website:
     right:
       - about.qmd
       - teaching.qmd
-      - math-camp-homepage.qmd
 
 format:
   html:
