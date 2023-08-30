@@ -2,3 +2,24 @@
 title: "Chapter 12: Cross products as transformations"
 format: html
 ---
+
+Plan.
+Define a 3D-to-1D linear transformation in terms of \vec v and \vec w
+Find its dual vector
+Show that this dual is $\vec v \times \vec w$
+
+You can imagine an incorrect extrapolation from a what a crossproduct is in 2D (though, does that really exist?) to what it is in 3D: the determinant of a matrix containing 3 vectors $\vec v_i \in \mathbb R^3$.
+
+But you can make a change where you substitute out the first vector for the scalars (coordinates) and thus create a function that takes a 3-tuple and maps it to a number (see screenshot)
+
+Returns the volume of the parallelpiped determined by x, y z and \vec v and \vec w
+
+It's a linear function.
+He leaves it to us to show that this function *is* linear.
+
+Now, because it's linear, we know that we can describe it using matrix multiplication. That is, there's a 1 x 3 matrix that encodes it (AND there's a dual vector).
+
+Damn. You're going to have to re-watch this and understand the role of the dual vector.
+
+  - Way 1. The vector such that applying the transformation is the same thing as taking the dot product with that vector.
+  - Way 2. Geometrically, you can reason that the dual vector must be perpendicular with v and w the length equal to the area of the parallelogram spanned by spanned by the two vectors.

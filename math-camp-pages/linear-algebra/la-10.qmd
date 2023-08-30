@@ -2,3 +2,55 @@
 title: "Chapter 10: Dot products and duality"
 format: html
 ---
+
+The traditional description of the dot product -- purely arithmetic.
+NB you need two dimensions of the same dimension
+
+Other names: 
+
+What's the geometric interpretation of the dot product?
+A: There's a screenshot
+The dot product of two vectors is the length of the projection of one vector onto the length of the other vector
+
+What does it mean to project a vector onto another (geometrically)?
+
+Geometrically speaking, where does the sign of the dot product come from?
+Screen shot
+
+Why does order not matter?
+There are some screenshots
+Is it the length of the projection or the length of the vector projected onto that is scaled?
+
+A diagonal number line example
+
+* diagonal line that goes through the origin
+* $\hat u$, the unit vector that sits on the diagonal line
+* points in the original space represented their two coordinates
+* project them onto the diagonal line
+* any line of evenly spaced dots will the evenly spaced on the new line -- thus it's a linear transformation!
+* all this means that there exists a projection matrix , $A_{1 \times 2}$ whose two entries are where $\hat i$ and $\hat j$ land, respectively
+* zooms in to make it visual
+* SYMMETRTY
+  - Because all three involved vectors are unit vectors, you can draw lines of symmetry and show that where i_hat lands on $\hat u$ is where $\hat u$ lands on \hat i, which simply the x coordinate of u. The same logic applies to $\hat j$
+  
+Statement: taking the dot product with a unit vector can be interpreted as projecting the vector onto the span of the unit vector and getting its length (show how that falls out of the formula)
+
+What's a synonym of 'orthogonal'?
+-Perpendicular
+
+Some important dot products
+
+dotting a vector with itself
+(pythagorean logic, say the elements are a and b, then a^2 + b^c)
+(sum of squares; if you take off the mean then you get the observed variance)
+
+dotting a vector with the one's vector
+
+
+$X^TX$ can be seen as dotting all the columns together
+
+$$\text{cov}(x, y)= n^{-1} \sum(x - \bar x)(y - \bar y)$$
+
+$$r = \frac{\sum(x - \bar x)(y - \bar y)}{\sqrt{\sum(x - \bar x)^2\sum(y - \bar y)^2}} = \frac{x'^Ty'}{|x'||y'|}$$
+
+Show how you can get this from a demeaned (deviate?) matrix!

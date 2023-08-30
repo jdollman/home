@@ -2,3 +2,13 @@
 title: "Chapter 17: Abstract vector spaces"
 format: html
 ---
+
+Functions are another type of vector?
+Yes!
+  - You can add two functions together! (f + g)(x) = f(x) + g(x)
+  - You can scale a function by a real number! (2f)(x) = 2f(x)
+  - Derivatives are an example of a transformation (a.k.a. linear operator)
+    - But what does it mean for a transformation to be *linear* (additivity and scaling -- there's a screenshot)
+    - He shows how this works for the derivative!
+  
+Woah, basis functions! 

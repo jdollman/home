@@ -2,3 +2,73 @@
 title: "Chapter 8: Inverse matrices, column space and null space"
 format: html
 ---
+
+Gaussean elimination and row echelon form. He's not going to cover these, but mentions that they're important.
+
+What's a system of equations?
+Most abstractly, it's a set of $m$ equations that have $n$ variables (unknowns).
+
+Examples
+
+$x = 5$ (1 equation and 1 variable ... not really unknown -- "unknowns" are just things you have to solve for)
+
+$2x - 3y = 8$ (1 equation and 2 unknowns)
+
+$2x - 3y = 8 \\ x = 5$ (now we're cooking with gas; we've got a system)
+
+$2x - 3y = 8 \\ 1x + 0y= 5$ (to make things line up)
+
+$$ x + y + z = 3\\ x + z = 1\\  z =0$$ (ok, three equations in three unknowns)
+
+How could we convert that last set of three equations into matrix vector multiplication?
+
+$$\begin{bmatrix} 1&1&1 \\ 1 &0&1 \\ 0&0&1 \end{bmatrix}\begin{bmatrix} x \\ y \\ z \end{bmatrix} = \begin{bmatrix} 3 \\ 1 \\ 0 \end{bmatrix}$$
+
+At this point have you talked about how matrix multiplication changes dimensions and what conformability is?
+
+GS says that $\textbf A \vec x = \vec v$ sheds light on the geometric interpretation of the problem (of solving for $\vec x$). What does he mean by that?
+As we've done in previous lessons, you think of matrix $\textbf A$ as a transformation, and you ask, what what vector $\vec x$ will end up at $\vec v$ when transformed by $\textbf A$.
+
+What's the notation for an inverse matrix?
+
+$\textbf A^{-1}$
+
+What's the key property of inverse matrices?
+
+$\textbf A \textbf A^{-1} = \textbf I$
+
+Also,
+
+$\textbf A^{-1} \textbf A = \textbf I$
+
+It's important to mention that since, in general, matrix multiplication isn't commutative.
+
+Grant doesn't mention this, but both notationally and functionally, the inverse matrix with its exponent of $^{-1}$ is analogous to the $^{-1}$ you can slap on scalars. For example, $x \cdot x^{-1} = x^1 \cdot x^{-1} = x^{(1 - 1)} = x^0 = 1$
+
+How is $A\vec x = \vec c$ solved?
+You premultiply both sides by $\textbf A^{-1}$
+
+If $\textbf A = \begin{bmatrix} 1&1\\2&2 \end{bmatrix}$, what's $\textbf A^{-1}$?
+LOL.
+
+Terminology: singular
+
+"Rank"
+- number of dimensions in the output of a transformation
+- number of dimension in the column space
+- you can think of 1 - rank/max possible rank as amount of collapsing
+
+So, what's full rank?
+when n(C(A)) = number of columns
+
+Why isn't the answer to the previous question the number of rows?
+
+If rank(A) = number of columns - 1, a line of vectors gets squished onto 0. But if rank(A) = number of columns - 2, then an entire plane gets sent by that transformation onto 0.
+
+Those vectors that get sent to the zero vector are referred to as the nullspace or the kernel. $\text{null}(\textbf A) = \{x:\textbf Ax = 0\}$
+Get it? Vectors that end up at null.
+
+What's the definition of column space?
+The set of all possible outputs of $$\textbf A \vec v$$
+span(a_1, a_2, \ldots, a_n)
+

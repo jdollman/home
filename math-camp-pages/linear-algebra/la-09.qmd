@@ -2,3 +2,38 @@
 title: "Chapter 9: Nonsquare matrices as transformations between dimensions"
 format: html
 ---
+
+This is another short 'footnote' video according to the Sanderson.
+
+This is all about interdimensional travel. I think you can make a fundamental bifurcation. Are there more *rows* in the transformation matrix than the vector, or are there fewer? In notation, you have $\textbf A_{ m \times n} \textbf x_{n \times 1} = \textbf v_{m \times 1}$
+
+Some examples
+
+```{r}
+m <- matrix(sample(1:9, size = 6), nrow = 3)
+m
+```
+
+```{r}
+i2 <- c(1, 0)
+j2 <- c(0, 1)
+
+m %*% i2
+m %*% j2
+```
+
+Let's now imagine that we take the 2D Cartesian plane and treat that as the $z = 0$ "floor" of 3D space. What transformation would encode that?
+
+First, you have to realize that you simply want the following to happen, for any vector $\vec x = \begin{bmatrix} x_1 \\ x_2 \end{bmatrix}$ you want it to become $\vec x = \begin{bmatrix} x_1 \\ x_2 \\ 0 \end{bmatrix}$. Blah blah, answer is $\begin{bmatrix} 1 & 0 \\ 0 & 1 \\ 0&0 \end{bmatrix}$
+
+Here's a slightly more complicated version of the last one. What if you want to make what was the 2D plane and turn it into the vertical plane? That is, imagine embedding the 2D plane in 3D space and then upending it so that it ends up perpendicular to itself?
+
+Something is going wrong in my imagination. I feel like these should be perpendicular, but the dot product isn't turning out to be perpendicular.
+
+What's the evenly spaced gridlines interpretation of squishing n > 1 dimensional space onto the number line?
+
+You imagine evenly spaced dots going along a line getting projected down onto the number line and being evenly spaced there.
+
+How would you interpret $$\begin{bmatrix} -0.8&2.1&3.4 \end{bmatrix}$$ as a transformation?
+
+Compressing down to one dimension (the number line)

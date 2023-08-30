@@ -32,3 +32,29 @@ Scaling a vector, scalar
 GS says that, in LA, numbers go around scaling so much that it's commong to use "number" and "scalar" interchangeably. Just to be clear, though the contents ... maybe ... IDK.
 
 I don't think he mentions anything about vector notation!
+
+What does it mean for vectors to be linearly dependent?
+
+These are possibly from another video:
+What does it mean to think of each element of a vector as a scalar?
+Answer: Entry $v_i$ scales the corresponding $\hat e_i$ (superior notation to i, j, k -- reminds me of how Laura bragged about Bogota street names)
+? Something about each vector is a recipe for scaling and adding together unit vectors
+I think he must mean $\vec v = \sum_{i = 1}^n v_i \hat e_i$
+
+
+How does GS explain the meaning of "basis" in "basis vectors"?
+
+Show how, for any target vector $\vec v = \begin{pmatrix} v_1 \\ v_2 \end{pmatrix}$, you can get there using any two linearly independent vectors.
+And then you can think of those combinations you generate as being the coordinates of that vector were those the two basis vectors spanning the space
+(it's easy to see when the unit vectors are those ones you're using)
+
+What's a linear combination and whence the "linear" in "linear combination"?
+
+What's the span of a single vector?
+$\vec v = \begin{bmatrix} v \end{bmatrix}$
+$\vec v = \begin{bmatrix} v_1 \\ v_2 \end{bmatrix}$
+$\vec v = \begin{bmatrix} v_1 \\ v_2 \\ v_3\end{bmatrix}$
+(can't visualize past that!)
+
+What's the span of two vectors?
+

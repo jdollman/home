@@ -55,3 +55,36 @@ How does an eigenbasis help you exponentiate a matrix?
 TODO: Insert Markov example
 
 There's the problem to do at the end.
+
+You should probably bring up positive definite here! And also ... Linear Models in Matrix Form. Check out that book's section on positive definite.
+
+What's the "eigen-interpretation" of a diagonal matrix?
+Its columns are where the basis vectors end up. Importantly, they end up on their original span, meaning that they're eigenvectors! This makes the diagonal values their corresponding eigenvalues
+
+What's an eigenbasis?
+It's unclear, but I think it's just a basis for the space we're talking about where each column is ... now I'm lost.
+
+When can you (not) get an eigenbasis?
+You need enough eigenvectors to span the full space
+
+(Not sure that this question is even phrased right)
+How do you get a matrix into its eigenbasis?
+
+Eigenvalues are roots of a matrix's characteristic polynomial
+
+How does GS represent the idea that tr(A) = \sum \lambda_i?
+$n^{-1} = n^{-1} \sum \lambda_i$ (the mean)
+
+$det A = ad - bc = \lambda_1 \lambda_2$
+
+The shortcut is $m \pm \sqrt{m^2-p}$
+
+I have no idea where this question came from: Confirm that the product of the eigenvalues of $\begin{bmatrix} c&a-bi \\ a+bi&c \end{bmatrix}$ is -1 if $a^2 + b^2 + c^2 = 1$
+
+At 12.20 we the homework. The mission is to prove how the determinant and trace are related to eigenvalues. Specifically, prove that $det A = \lambda_1 \lambda_2$ and the trace fact.
+He gives us the quadratic \lambda^2 - (a+d)\lambda + (ad-bc) and says taht there's something about these coefficients $-(a+d)$ and and $ad-bc$.
+
+Extras:
+What would the eigenvalues of a singular matrix be? Why?
+
+Justin, can you give an inkling into how eigenvalues are used in dimensionality reduction?
