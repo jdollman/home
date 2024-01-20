@@ -61,11 +61,12 @@ ul.task-list li input[type="checkbox"] {
   }
 }</script>
 
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
 
 <link rel="stylesheet" href="../../styles.css">
 </head>
 
-<body class="nav-fixed">
+<body class="nav-fixed fullcontent">
 
 <div id="quarto-search-results"></div>
   <header id="quarto-header" class="headroom fixed-top">
@@ -89,10 +90,6 @@ ul.task-list li input[type="checkbox"] {
     <a class="nav-link" href="../../teaching.html">
  <span class="menu-text">Teaching</span></a>
   </li>  
-  <li class="nav-item">
-    <a class="nav-link" href="../../math-camp-homepage.html">
- <span class="menu-text">3B1B Math Camp</span></a>
-  </li>  
 </ul>
               <div class="quarto-toggle-container">
                   <a href="" class="quarto-color-scheme-toggle nav-link" onclick="window.quartoToggleColorScheme(); return false;" title="Toggle dark mode"><i class="bi"></i></a>
@@ -103,14 +100,12 @@ ul.task-list li input[type="checkbox"] {
     </nav>
 </header>
 <!-- content -->
-<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-full page-navbar">
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
 <!-- sidebar -->
 <!-- margin-sidebar -->
-    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar zindex-bottom">
-        
-    </div>
+    
 <!-- main -->
-<main class="content column-page" id="quarto-document-content">
+<main class="content" id="quarto-document-content">
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
@@ -129,6 +124,17 @@ ul.task-list li input[type="checkbox"] {
 
 </header>
 
+<p>Plan. Define a 3D-to-1D linear transformation in terms of v and w Find its dual vector Show that this dual is <span class="math inline">\(\vec v \times \vec w\)</span></p>
+<p>You can imagine an incorrect extrapolation from a what a crossproduct is in 2D (though, does that really exist?) to what it is in 3D: the determinant of a matrix containing 3 vectors <span class="math inline">\(\vec v_i \in \mathbb R^3\)</span>.</p>
+<p>But you can make a change where you substitute out the first vector for the scalars (coordinates) and thus create a function that takes a 3-tuple and maps it to a number (see screenshot)</p>
+<p>Returns the volume of the parallelpiped determined by x, y z and v and w</p>
+<p>It’s a linear function. He leaves it to us to show that this function <em>is</em> linear.</p>
+<p>Now, because it’s linear, we know that we can describe it using matrix multiplication. That is, there’s a 1 x 3 matrix that encodes it (AND there’s a dual vector).</p>
+<p>Damn. You’re going to have to re-watch this and understand the role of the dual vector.</p>
+<ul>
+<li>Way 1. The vector such that applying the transformation is the same thing as taking the dot product with that vector.</li>
+<li>Way 2. Geometrically, you can reason that the dual vector must be perpendicular with v and w the length equal to the area of the parallelogram spanned by spanned by the two vectors.</li>
+</ul>
 
 
 

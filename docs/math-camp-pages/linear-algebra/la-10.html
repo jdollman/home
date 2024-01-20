@@ -61,11 +61,12 @@ ul.task-list li input[type="checkbox"] {
   }
 }</script>
 
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
 
 <link rel="stylesheet" href="../../styles.css">
 </head>
 
-<body class="nav-fixed">
+<body class="nav-fixed fullcontent">
 
 <div id="quarto-search-results"></div>
   <header id="quarto-header" class="headroom fixed-top">
@@ -89,10 +90,6 @@ ul.task-list li input[type="checkbox"] {
     <a class="nav-link" href="../../teaching.html">
  <span class="menu-text">Teaching</span></a>
   </li>  
-  <li class="nav-item">
-    <a class="nav-link" href="../../math-camp-homepage.html">
- <span class="menu-text">3B1B Math Camp</span></a>
-  </li>  
 </ul>
               <div class="quarto-toggle-container">
                   <a href="" class="quarto-color-scheme-toggle nav-link" onclick="window.quartoToggleColorScheme(); return false;" title="Toggle dark mode"><i class="bi"></i></a>
@@ -103,14 +100,12 @@ ul.task-list li input[type="checkbox"] {
     </nav>
 </header>
 <!-- content -->
-<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-full page-navbar">
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
 <!-- sidebar -->
 <!-- margin-sidebar -->
-    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar zindex-bottom">
-        
-    </div>
+    
 <!-- main -->
-<main class="content column-page" id="quarto-document-content">
+<main class="content" id="quarto-document-content">
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
@@ -129,6 +124,35 @@ ul.task-list li input[type="checkbox"] {
 
 </header>
 
+<p>The traditional description of the dot product – purely arithmetic. NB you need two dimensions of the same dimension</p>
+<p>Other names:</p>
+<p>What’s the geometric interpretation of the dot product? A: There’s a screenshot The dot product of two vectors is the length of the projection of one vector onto the length of the other vector</p>
+<p>What does it mean to project a vector onto another (geometrically)?</p>
+<p>Geometrically speaking, where does the sign of the dot product come from? Screen shot</p>
+<p>Why does order not matter? There are some screenshots Is it the length of the projection or the length of the vector projected onto that is scaled?</p>
+<p>A diagonal number line example</p>
+<ul>
+<li>diagonal line that goes through the origin</li>
+<li><span class="math inline">\(\hat u\)</span>, the unit vector that sits on the diagonal line</li>
+<li>points in the original space represented their two coordinates</li>
+<li>project them onto the diagonal line</li>
+<li>any line of evenly spaced dots will the evenly spaced on the new line – thus it’s a linear transformation!</li>
+<li>all this means that there exists a projection matrix , <span class="math inline">\(A_{1 \times 2}\)</span> whose two entries are where <span class="math inline">\(\hat i\)</span> and <span class="math inline">\(\hat j\)</span> land, respectively</li>
+<li>zooms in to make it visual</li>
+<li>SYMMETRTY
+<ul>
+<li>Because all three involved vectors are unit vectors, you can draw lines of symmetry and show that where i_hat lands on <span class="math inline">\(\hat u\)</span> is where <span class="math inline">\(\hat u\)</span> lands on i, which simply the x coordinate of u. The same logic applies to <span class="math inline">\(\hat j\)</span></li>
+</ul></li>
+</ul>
+<p>Statement: taking the dot product with a unit vector can be interpreted as projecting the vector onto the span of the unit vector and getting its length (show how that falls out of the formula)</p>
+<p>What’s a synonym of ‘orthogonal’? -Perpendicular</p>
+<p>Some important dot products</p>
+<p>dotting a vector with itself (pythagorean logic, say the elements are a and b, then a^2 + b^c) (sum of squares; if you take off the mean then you get the observed variance)</p>
+<p>dotting a vector with the one’s vector</p>
+<p><span class="math inline">\(X^TX\)</span> can be seen as dotting all the columns together</p>
+<p><span class="math display">\[\text{cov}(x, y)= n^{-1} \sum(x - \bar x)(y - \bar y)\]</span></p>
+<p><span class="math display">\[r = \frac{\sum(x - \bar x)(y - \bar y)}{\sqrt{\sum(x - \bar x)^2\sum(y - \bar y)^2}} = \frac{x'^Ty'}{|x'||y'|}\]</span></p>
+<p>Show how you can get this from a demeaned (deviate?) matrix!</p>
 
 
 

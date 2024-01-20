@@ -61,11 +61,12 @@ ul.task-list li input[type="checkbox"] {
   }
 }</script>
 
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
 
 <link rel="stylesheet" href="../../styles.css">
 </head>
 
-<body class="nav-fixed">
+<body class="nav-fixed fullcontent">
 
 <div id="quarto-search-results"></div>
   <header id="quarto-header" class="headroom fixed-top">
@@ -89,10 +90,6 @@ ul.task-list li input[type="checkbox"] {
     <a class="nav-link" href="../../teaching.html">
  <span class="menu-text">Teaching</span></a>
   </li>  
-  <li class="nav-item">
-    <a class="nav-link" href="../../math-camp-homepage.html">
- <span class="menu-text">3B1B Math Camp</span></a>
-  </li>  
 </ul>
               <div class="quarto-toggle-container">
                   <a href="" class="quarto-color-scheme-toggle nav-link" onclick="window.quartoToggleColorScheme(); return false;" title="Toggle dark mode"><i class="bi"></i></a>
@@ -103,14 +100,12 @@ ul.task-list li input[type="checkbox"] {
     </nav>
 </header>
 <!-- content -->
-<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-full page-navbar">
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
 <!-- sidebar -->
 <!-- margin-sidebar -->
-    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar zindex-bottom">
-        
-    </div>
+    
 <!-- main -->
-<main class="content column-page" id="quarto-document-content">
+<main class="content" id="quarto-document-content">
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
@@ -129,6 +124,21 @@ ul.task-list li input[type="checkbox"] {
 
 </header>
 
+<p>A transformation is linear if it satisfies what two properties? (You should be able to state their respective meanings ‘in English’ and write them out in math notation)</p>
+<p>It must a) preserve sums and b) preserve scaling. In notation, these are:</p>
+<p><span class="math display">\[L(\vec v + \vec w) = L(\vec v) + L (\vec w) \\ L(s\vec v) = s L(\vec v)\]</span></p>
+<p>To briefly step down from the heights of linear algebra, imagine the function <span class="math inline">\(f\)</span> that takes a number and multiplies it by three, so <span class="math inline">\(f(x) = 3x\)</span>. This is linear! <span class="math inline">\(f(x + y) = f(x) + f(y)\)</span> and <span class="math inline">\(f(sx) = sf(x)\)</span>. I encourage you to test it out by substituting a number in for <span class="math inline">\(x\)</span>. But now let <span class="math inline">\(g\)</span> be <span class="math inline">\(g(x) = x^2\)</span>. I encourage you to try that out and see if it’s a linear transformation.</p>
+<p>In <a href="https://www.3blue1brown.com/lessons/linear-transformations">the text version of this lesson</a> we read, “You can know that a transformation is linear if all those grid lines [of a 2D plane] which began parallel and evenly spaced remain parallel and evenly spaced (why?).” Let’s answer <em>why?</em> (Note that answers will vary.)</p>
+<p>XXX This requires quite a bit of thought, I think. Let’s just pick two parallel grid lines, x = 1 and x = -1. As vectors these are <span class="math inline">\(\pm \hat i + \alpha\hat j\)</span>, where <span class="math inline">\(\alpha\)</span> ranges over the entire real number line. You can XXX</p>
+<p>Idea, if the lines had the same slope at t = 0, then they should have it after the transformation as well. You should show that. But what does it mean for them to be evenly spaced? It seems like it means for any two points respective points whose line connecting them was perpendicular, the perpendicular line connecting them after the transformation should be a constant as well (it might be a different constant).</p>
+<p>On the heels of the previous quote from the text version of the lesson, we read, “If a transformation is linear, it must also fix the origin in place (again, why?).” Let’s answer that as well.</p>
+<p>XXX</p>
+<p>Let’s say we have a transformation that takes the unit vectors <span class="math inline">\(\hat i, \hat j\)</span> and moves them to <span class="math inline">\(\begin{bmatrix} 2\\ 2 \end{bmatrix}\)</span> and <span class="math inline">\(\begin{bmatrix} 0\\ 0.5 \end{bmatrix}\)</span>, respectively. Where would the vector originally at <span class="math inline">\(\begin{bmatrix} 2\\ 2 \end{bmatrix}\)</span> end up?</p>
+<p>Could you gganimate a transformation? I think so …</p>
+<p><span class="math display">\[\begin{bmatrix} 1 &amp; 1\\ 0 &amp; 2 \end{bmatrix}\]</span> and <span class="math display">\[\begin{bmatrix} 1 &amp; 2\\ 0 &amp; 1 \end{bmatrix}\]</span></p>
+<p>are both [insert name] kinds of transformations. Which of them compresses the vertical dimension closer to the <span class="math inline">\(x\)</span>-axis?</p>
+<p>S shows how you’d create a <span class="math inline">\(90°\)</span> counterclockwise transformation matrix. What about a <span class="math inline">\(90°\)</span> clockwise transformation? What about a 45 degree rotation?</p>
+<p>Application Idea Sanderson mentioned that neural networks involve linear transformations, so I thought it would be chill to cover those! But also couldn’t you do it with regression?</p>
 
 
 
