@@ -1,7 +1,0 @@
----
-title: "Teaching"
----
-
-At Stony Brook I've been the 'instructor of record' for Introduction to Statistics (undergraduate and graduate) and Experiments in Political Science (undergraduate). In addition to those bureaucratically sanctioned courses, I also taught an introductory math camp to incoming PhD students and, along with my esteemed former colleague [Pei-Hsun Hsieh](https://phsieh.com/), I co-taught a weekly introduction to R during the Fall 2019 semester to graduate students from sundry social sciences.
-
-Currently, materials are only available for the math camp. The rest seem to have been apprehended by federal authorities from a Mar-a-Lago bathroom. A [flyer](seven-ds.pdf) from the Introduction to R course survives, however.

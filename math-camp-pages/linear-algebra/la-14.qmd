@@ -1,4 +1,0 @@
----
-title: "Chapter 14: Change of basis"
-format: html
----

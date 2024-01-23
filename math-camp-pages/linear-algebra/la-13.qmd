@@ -1,4 +1,0 @@
----
-title: "Chapter 13: Cramer's rule"
-format: html
----

@@ -1,8 +1,0 @@
----
-title: "Chapter 8: "
-format: html
----
-
-#
-
-[YouTube video](https://youtu.be/rfG8ce4nNh0)

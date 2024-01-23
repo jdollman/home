@@ -6,8 +6,11 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
+<meta name="author" content="Justin Dollman">
+<meta name="dcterms.date" content="2023-01-24">
+<meta name="description" content="Subtitle">
 
-<title>Justin Dollman - Chapter 16: A quick trick for computing eigenvalues</title>
+<title>Justin Dollman - Title</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -61,7 +64,6 @@ ul.task-list li input[type="checkbox"] {
   }
 }</script>
 
-  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
 
 <link rel="stylesheet" href="../../styles.css">
 </head>
@@ -113,14 +115,37 @@ ul.task-list li input[type="checkbox"] {
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">Chapter 16: A quick trick for computing eigenvalues</h1>
-</div>
+<h1 class="title">Title</h1>
+  <div class="quarto-categories">
+    <div class="quarto-category">R</div>
+    <div class="quarto-category">tidytext</div>
+    <div class="quarto-category">text analysis</div>
+    <div class="quarto-category">Ezra Klein</div>
+  </div>
+  </div>
 
+<div>
+  <div class="description">
+    Subtitle
+  </div>
+</div>
 
 
 <div class="quarto-title-meta">
 
+    <div>
+    <div class="quarto-title-meta-heading">Author</div>
+    <div class="quarto-title-meta-contents">
+             <p>Justin Dollman </p>
+          </div>
+  </div>
     
+    <div>
+    <div class="quarto-title-meta-heading">Published</div>
+    <div class="quarto-title-meta-contents">
+      <p class="date">January 24, 2023</p>
+    </div>
+  </div>
   
     
   </div>
@@ -128,22 +153,8 @@ ul.task-list li input[type="checkbox"] {
 
 </header>
 
-<section id="section" class="level1">
-<h1></h1>
-<p>This was brought up at breakneck speed, but can you remember what a matrix’s characteristic polynomial is?</p>
-<p>How are eigenvalues related to a matrix’s characteristic polynomial? Eigenvalues are the roots of a matrix’s characteristic polynomial.</p>
-<p>What was the trace of a matrix? If your matrix is <span class="math display">\[\begin{bmatrix} a &amp; b \\ c &amp; d \end{bmatrix}\]</span>, then it’s <span class="math inline">\(a + d\)</span>.</p>
-<p>Ok, but most matrices are bigger than 2x2. How would you generalize the concept of a <span class="math inline">\(\text{tr}(\textbf A)\)</span>? The sum of <span class="math inline">\(\text{diag}(\textbf A)\)</span>, or, <span class="math display">\[\sum_{i=1}^n a_{ii}\]</span></p>
-<p>How is a matrix’s trace related to its eigenvalues? Note: there are two ways to answer, one is more straightforward, the other is more relevant to where we’re going</p>
-<p><span class="math inline">\(\text{tr}(\textbf A) = \sum_{i=1}^n \lambda_i\)</span>. You can divide both sides by <span class="math inline">\(n\)</span> to get <span class="math inline">\(n^{-1}\text{tr}(\textbf A) = n^{-1}\sum_{i=1}^n \lambda_i = \text{mean}(\lambda_i)\)</span></p>
-<p>In the <span class="math inline">\(\textbf A \in \mathbb R^2\)</span> case, we have <span class="math inline">\(a + d = \lambda_1 + \lambda_2\)</span> or <span class="math inline">\(\frac{a + d}2 = \frac{\lambda_1 + \lambda_2}2\)</span></p>
-<p>Enough trace for now. How is the <em>determinant</em> of a matrix related to its eigenvalues?</p>
-<p><span class="math display">\[\text{det}(\textbf A) = \Pi_{i=1}^n \lambda_i\]</span></p>
-<p>In the <span class="math inline">\(\textbf A \in \mathbb R^2\)</span> case, we have <span class="math inline">\(ad - bc = \lambda_1 \lambda_2\)</span></p>
-<p>I need to go back and find out how he got that the eigenvalues are evenly spaced from … what?</p>
 
 
-</section>
 
 </main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">

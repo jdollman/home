@@ -1,8 +1,0 @@
----
-title: "Chapter 7: "
-format: html
----
-
-#
-
-[YouTube video](https://youtu.be/kfF40MiS7zA)

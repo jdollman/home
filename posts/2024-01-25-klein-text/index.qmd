@@ -1,0 +1,10 @@
+---
+title: "Title"
+description: "Subtitle"
+author: Justin Dollman
+date: 01-24-2023
+categories: [R, tidytext, text analysis, Ezra Klein]
+image: zissou_swirls2.png
+draft: false
+---
+
