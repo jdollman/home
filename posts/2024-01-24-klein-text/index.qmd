@@ -1,6 +1,6 @@
 ---
-title: "Title"
-description: "Subtitle"
+title: "Ezra Klein"
+description: "What can we find out about the Ezra Klein show through text?"
 author: Justin Dollman
 date: 01-24-2023
 categories: [R, tidytext, text analysis, Ezra Klein]
@@ -8,3 +8,10 @@ image: zissou_swirls2.png
 draft: false
 ---
 
+# Header
+
+Texttexttext
+
+## Smaller header
+
+### Third header, so much header
