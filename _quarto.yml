@@ -9,9 +9,7 @@ website:
       - posts.qmd
 format:
   html:
-    theme:
-      light: zephyr
-      dark: quartz
+    theme: zephyr
     css: styles.css
 
 editor: source
