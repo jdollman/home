@@ -30,7 +30,11 @@ Alright, so what does this ingenious interviewer from Irvine actually talk about
 
 We can also look at how he uses words differentially. Why would that be useful? Well, just looking at the words he uses might tell us that he's a guy with a show that covers topics X, Y, and Z that use the words associated with those topics.^[If we wanted a topic analysis we'd head down to the last section of this page!] One way we can "control for" topic is to contrast Ezra's words with those of his guest. Abstractly, the idea is that if person A and B are talking about subject S, the words that differentiate A and B are *not* going to be those that generically describe subject S. Rather, they will be the words idiosyncratically associated with each interlocutor.
 
+We can also compare the words of the Ezra Klein Show to the words used in introductory political science textbooks. The idea of such an analysis would be to ask, "When Ezra talks politics, which topics (proxied by words) does he dedicate space to than an introduction to politics? Which topics does he spend less time one?" From these results one could hope to find out something about which aspects of politics Ezra finds interesting and important, and which less so. Unfortunately, I carried out the analysis and the result is below:
+
 ![](words.png)
+
+[Interpretation/explanation forthcoming tomorrow]
 
 ## Sentiment Analysis
 
