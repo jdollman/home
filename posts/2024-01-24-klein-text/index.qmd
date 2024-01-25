@@ -20,14 +20,17 @@ Before even looking at the content of the episodes, before looking at what words
 ![](generous_interviewer.png)
 <br/>
 
-
 We can also compare this distribution of how much Ezra speaks as interviewer to how much other interviewers speak. After all, it's hard to really feel what the numbers in the graph above mean without comparing them to the relative talkativeness of other interviewers. Below is a comparison of Ezra with two other interviewers, both of whom have had Ezra on as a guest on their programs: Rob Wiblin (80,000 Hours) and Tyler Cowen (Conversations with Tyler).
 
-[Graph will appear late morning January 25^th^ ... or early in the afternoon]
+![](three_hosts.png)
+
+This is a little more interesting, I think. 
+
+My hypothesis before crunching these data was that Tyler was speak the least (and it wouldn't be close), then Rob, then Ezra. And that turned out to be right.^[I sadly didn't preregister these hypotheses, so you have to reason to believe me.] After all, Ezra speaks quiet a bit because people tune into Ezra's show _in order to listen to Ezra_. Though Tyler's show does have "Tyler" in the name, he frequently announces that his interviews are the interviews that _he_ wants, not what the listeners might want. And his listener-be-damned approach often results in quick questions and abrupt topic changes. The 80,000 Hours podcast has this intermediate position where Rob often positions himself as a listener might and restates what the speaker said, gives the conventional wisdom against which the interviewee can react, and ask follow-up questions.
 
 ## Ezra's Words
 
-Alright, so what does this ingenious interviewer from Irvine actually talk about? Among the ways of answering that question, one is to just look at the words he uses. The simplest way of operationalizing 'words used' is to look at "unigrams," which result from splitting the unstructured text at every whitespace^[You can also split on other delimiters as well. Various non-alphanumeric characters would do], making each whitespace-separated unit into a row in a dataframe, and counting how many rows each token (word) appears in that resulting dataframe. Ezra's result is below:
+Alright, so what does this ingenious interviewer from Irvine actually talk about? Among the ways of answering that question, one is to just look at the words he uses. The simplest way of operationalizing 'words used' is to look at "unigrams," which result from splitting the unstructured text at every whitespace^[You can also split on other delimiters as well. Various non-alphanumeric characters would do], making each whitespace-separated unit into a row in a dataframe, and counting how many rows each token (word) appears in that resulting dataframe. Ezra's result is below.^[For the following two graphs, I recommend right-clicking them and opening in a new window. The proportions are terrible on this page. My sincerest aesthetic apologies.]
 
 <br/>
 
