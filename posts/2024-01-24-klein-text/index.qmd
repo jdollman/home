@@ -30,6 +30,7 @@ We can also compare this distribution of how much Ezra speaks as interviewer to 
 Alright, so what does this ingenious interviewer from Irvine actually talk about? Among the ways of answering that question, one is to just look at the words he uses. The simplest way of operationalizing 'words used' is to look at "unigrams," which result from splitting the unstructured text at every whitespace^[You can also split on other delimiters as well. Various non-alphanumeric characters would do], making each whitespace-separated unit into a row in a dataframe, and counting how many rows each token (word) appears in that resulting dataframe. Ezra's result is below:
 
 <br/>
+
 ![This image, as well as most others, look *much* better if you right-click them and open in a new tab](unigrams.png)
 <br/>
 
