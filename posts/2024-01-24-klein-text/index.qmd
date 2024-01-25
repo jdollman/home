@@ -1,6 +1,6 @@
 ---
-title: "Ezra Klein"
-description: "What can we find out about the Ezra Klein show through text?"
+title: "The Ezra Klein Show"
+description: "What can we learn through text?"
 author: Justin Dollman
 date: 01-24-2023
 categories: [R, tidytext, text analysis, Ezra Klein]
@@ -10,37 +10,56 @@ draft: false
 
 ## Welcome
 
-This page is a small (and incomplete!) labor of love. For now, it's part of an application to be the researcher for the Ezra Klein Show. With time it will morph into a much longer and more thorough guided tour of text analysis and politics.
+This page is a small (and incomplete!) labor of love.^[This page is currently in progress and will be updated until January 29th, 2024. I'm working on it as much as I can job-permitting.] For now, it's part of an application to be the researcher for the Ezra Klein Show. With time it will morph into a much longer and more thorough guided tour how to use text analysis to understand politics and society.
 
 ## Interviewing Style
 
 Before even looking at the content of the episodes, before looking at what words are said, sentiments are expressed and topics are covered, we can look at volume of speaking.
 
+<br/>
 ![](generous_interviewer.png)
+<br/>
+
 
 We can also compare this distribution of how much Ezra speaks as interviewer to how much other interviewers speak. After all, it's hard to really feel what the numbers in the graph above mean without comparing them to the relative talkativeness of other interviewers. Below is a comparison of Ezra with two other interviewers, both of whom have had Ezra on as a guest on their programs: Rob Wiblin (80,000 Hours) and Tyler Cowen (Conversations with Tyler).
 
-[Graph will appear late morning January 25^th^]
+[Graph will appear late morning January 25^th^ ... or early in the afternoon]
 
 ## Ezra's Words
 
-Alright, so what does this ingenious interviewer from Irvine actually talk about? Among the ways of answering that question, one is to just look at the words he uses.
+Alright, so what does this ingenious interviewer from Irvine actually talk about? Among the ways of answering that question, one is to just look at the words he uses. The simplest way of operationalizing 'words used' is to look at "unigrams," which result from splitting the unstructured text at every whitespace^[You can also split on other delimiters as well. Various non-alphanumeric characters would do], making each whitespace-separated unit into a row in a dataframe, and counting how many rows each token (word) appears in that resulting dataframe. Ezra's result is below:
 
-[Incoming graph of unigrams, bigrams, and trigrams]
+<br/>
+![This image, as well as most others, look *much* better if you right-click them and open in a new tab](unigrams.png)
+<br/>
 
-We can also look at how he uses words differentially. Why would that be useful? Well, just looking at the words he uses might tell us that he's a guy with a show that covers topics X, Y, and Z that use the words associated with those topics.^[If we wanted a topic analysis we'd head down to the last section of this page!] One way we can "control for" topic is to contrast Ezra's words with those of his guest. Abstractly, the idea is that if person A and B are talking about subject S, the words that differentiate A and B are *not* going to be those that generically describe subject S. Rather, they will be the words idiosyncratically associated with each interlocutor.
+But you can also get slighly more sophisticated and look at contiguous words. So, instead of splitting at every whitespace, you split at every second or third whitespace. The nice thing about that is you start to see phrases, turns of speech. For example, if you were curious why "people," "lot," and" bit" appear in the unigrams, the following two panels give you your answer.
+
+<br/>
+![](bigrams_trigrams.png)
+<br/>
+
+The Ezra Klein Show fan will also be pleased to see Ezra's pat phrases for parts of his podcast: "final question", "books you'd recommend," and "email [is] ezrakleinshow@nytimes.com." I'm not sure if seeing these phrases is *interesting*, but they are nice proofs of concept for the method.
+
+Here is something that's more interesting. We can also look at how he uses words differentially. Why would that be useful? Well, just looking at the words he uses might tell us that he's a guy with a show that covers topics X, Y, and Z that use the words associated with those topics.^[If we wanted a topic analysis we'd head down to the last section of this page!] One way we can "control for" topic is to contrast Ezra's words with those of his guest. Abstractly, the idea is that if person A and B are talking about subject S, the words that differentiate A and B are *not* going to be those that generically describe subject S. Rather, they will be the words idiosyncratically associated with each interlocutor.
+
+[Forthcoming plot, Jan 25]
 
 We can also compare the words of the Ezra Klein Show to the words used in introductory political science textbooks. The idea of such an analysis would be to ask, "When Ezra talks politics, which topics (proxied by words) does he dedicate space to than an introduction to politics? Which topics does he spend less time one?" From these results one could hope to find out something about which aspects of politics Ezra finds interesting and important, and which less so. Unfortunately, I carried out the analysis and the result is below:
 
+<br/>
 ![](words.png)
 
-[Interpretation/explanation forthcoming tomorrow]
+<br/>
+I call this 'analysis' "unfortunate" because it doesn't generate any insight. I mean, what are you really supposed to get from this? One takeaway for the practitioner of text analysis is that you might have to do a decent amount of preprocessing before you can make impactful deliverables. Two useful ways you can preprocess raw text here are lemmatizing and using a parts-of-speech tagger to extract only nouns. What both of those steps share is the winnowing out (or consolidating) of noise/chaff. Let's test that out and see if my hunches are right:
+
+[Coming soon: lemmas, nouns only as promised]
 
 ## Sentiment Analysis
 
 I think most listeners of The Ezra Klein Show have noticed that Ezra is unique among interviewers in his emotionality. Not emotionality in a histrionic sense, but more like "general emotional urgency." I'm not sure I like that term (and I don't think it conveys anything to someone unfamiliar with the podcast), but I'll leave it there as a placeholder for now.
 
-[Graph will appear late afternoon January 25^th^]
+[Graph will appear late afternoon January 26^th^]
 
 ## Topics Over Time
 
@@ -49,3 +68,9 @@ I think most listeners of The Ezra Klein Show have noticed that Ezra is unique a
 ## Methodological Notes
 
 [Forthcoming when the main body is done.]
+
+## Acknowledgements and Arigatos
+
+Andrew Heiss's [data visualization course](https://datavizs21.classes.andrewheiss.com/) inspired (and enabled) me to have nice(ish) looking text on my graphs. If you know some `ggplot2` and are looking to become high-intermediate in your `ggplot2` skills, I highly recommend his course.
+
+The vast majority of the text analysis routines I learned back in the day from Julia Silge and Dave Robinson's [*Tidy Text Mining with R*](https://www.tidytextmining.com/) book. I recommend it to anyone as a jumping off point for doing text analysis. Most of the analyses here don't go (too far) beyond what you can do with the tools you pick up in that book.
