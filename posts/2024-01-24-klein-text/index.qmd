@@ -91,17 +91,13 @@ Ok, *this* could be interesting. We see that trust is consistently the great con
 
 I'm just ... not sure about this. You see why dictionary-based isn't a particularly valid way of inferring emotion from word usage. Just looking at the **Trust** side of things, "kind" appears in collocations like "kind of bad," (which would have the valence wrong) and, "kind of [entity]," which is not usually valenced. It's certainly not always (probably not even usually) an indicator of trust. You can go down the list and find similar (and other!) problems with every other word. I'm honestly not sure how people take this seriously.
 
-## Topics Over Time
-
-[Section coming end-of-day January 27^th^]
-
 ## Concluding Thoughts
 
 I'm not sure if I would have predicted this beforehand, but by far the most interesting plots here are the two looking at simple volume of speaking. Why is this? I think it has to be because it's the only case where the method (counting, in this case) adequately represents the thing purporting to measured. I suppose word counts do that as well, but there's no spice when there's no implicit contrast (as is the case simple word counts) and then when there is contrast (in those graphs that plot proportions against each other), nothing pops out. *Ex ante* it might have be unknowable that was going to happen.
 
 ## Methodological Notes
 
-[Forthcoming when the main body is done.]
+[Forthcoming after the main body is done.]
 
 ## Acknowledgements and Arigatos
 
