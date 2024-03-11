@@ -38,9 +38,7 @@ theme_set(theme_minimal(base_family = 'IBM Plex Sans'))
 #            family = 'IBM Plex Sans',
 #            fontface = 'bold',
 #            size = rel(5))
-```
 
-```{r echo=FALSE}
 tibble(x = seq(0, 2*pi, by = 0.001)) %>% 
   ggplot(aes(x)) +
   # geom_hline(yintercept = 0) +
