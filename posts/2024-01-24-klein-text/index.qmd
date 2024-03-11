@@ -99,6 +99,6 @@ I'm not sure if I would have predicted this beforehand, but by far the most inte
 
 Andrew Heiss's [data visualization course](https://datavizs21.classes.andrewheiss.com/) inspired (and enabled) me to have nice(ish) looking text on my graphs. If you know some `ggplot2` and are looking to become high-intermediate in your `ggplot2` skills, I highly recommend his course.
 
-The vast majority of the analyses you see here I learned back in the day from Julia Silge and Dave Robinson's [*Tidy Text Mining with R*](https://www.tidytextmining.com/) book. I recommend it to anyone as a jumping off point for doing text analysis. Most of the analyses here don't go (too far) beyond what you can do with the tools you pick up in that book.
+The vast majority of the analyses you see here I learned back in the day from Julia Silge and Dave Robinson's [*Tidy Text Mining with R*](https://www.tidytextmining.com/) book. I recommend it to anyone as a jumping off point for doing text analysis. Most of the analyses here don't go (too far) beyond what you can do with the tools you pick up in that book
 
 Thanks to [Kriti Behari](https://artsandsciences.syracuse.edu/people/graduate-students/kriti-behari/) and [Natasha Latysheva](https://www.linkedin.com/in/nslatysheva?originalSubdomain=uk) for their encouragement in creating this page and applying to the position
