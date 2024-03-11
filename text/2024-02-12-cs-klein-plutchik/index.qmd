@@ -1,0 +1,401 @@
+---
+title: "Sentiment Analysis Case Study (II)"
+description: "Kicking the Tyres on NRC-EIL"
+author: Justin Dollman
+date: 12-02-2024
+# date-modified: "09/02/2024"
+categories: [R, sentiment analysis, text analysis, Ezra Klein, Plutchik]
+format:
+    html:
+      code-fold: true
+      code-tools: true
+draft: true
+---
+
+# To-Do
+
+You failed to detect chapters in Volumes 5 and 6
+. . . You need to rename the books Volumes in your data, you rube
+
+Figure out what Markdown thinks a line-initial ... is.
+
+Ask ChatGPT how I could more efficiently (fewer lines, dedicated code) do the sentimentr::as_key() routine.
+
+Figure out a nice color scheme for graphs below
+
+Think aloud about the travails of data wrangling. Also, see if munging and wrangling are the same. Cleaning, too.
+
+Spend more time with the pre-analysis. Specifically, the 
+
+Ok, you should make this have a couple other purposes. Heavily comment your 'advanced R' and give little minimal examples. Do this after reading all the documentation (try to not get into Advanced R book). Also, redo how you get chapters from Fall and Decline. In general, heavily comment that pre-processing bit.
+
+# Prologue
+
+When I was going through sentiment dictionaries, the majority of which are sentiment/polarity/valence dictionaries, I found it curious that two relatively large dictionary-building efforts were dedicated to encoding words into obscure spaces. One of the is a three-dimensional valence-arousal-dominance space, the other is ??? Plutchik's eight-dimensions of emotions (or four, if opposing pairs of basic emotions lie along the same dimension). But, open-minded as I am, I thought I should try out these two dictionaries. In this post I'll look at NRC and NRC-EIL lexicons, which are similar except that the second is real valued (it maps words to numbers between 0 and 1 instead of labeling them as 'positive' and 'negative'). For more information on this, check out the dictionary page. But let's just say that it's a great feature, in theory at least. One interest I have in this post is to compare the performance of the two dictionaries and see if this theoretically great feature makes a practical difference.
+
+The texts for this one are going to be a little weird. I've chosen a literary-historical work and the corpus of Ezra Klein's New York Times podcasts. If I expand this in the future, I'll do This American Life episodes as well so that I have more informal emotive conversation in the mix. The literary-historical work is Edward Gibbon's *The History of the Decline and Fall of the Roman Empire*, a six-volume account of the Roman Empire from XXX in YEAR to the Fall of Byzantium in 1453. Apparently, my masculinity is tied up in how often I think about the Roman Empire, so I thought I had better start thinking about it more than a couple times a year. Maybe with that increase in testosterone I'll finally be able to do more than 10 pull-ups. In any case, unlike bloodless historical accounts modern American schoolchildren encounter, there's a lot of passion across those six volumes.
+
+Who is this post for? It'd say it's mostly aimed at aspiring practitioners of text analysis. It will be too rudimentary for actual practitioners and, having already seen the results, it won't be of much interest to historians/digital humanities types (except insofar as null results are useful). The aspiring practitioners will see quite a bit of useful (advanced?) R munging, which is disappointingly always the most time-consuming and practical bit. You'll also see how to run analyses beyond the scope of `tidytext` pipelines.
+
+```{r message=FALSE}
+library(gutenbergr)
+library(tidytext)
+library(sentimentr)
+library(tidyverse)
+```
+
+```{r}
+library(ggtext)
+library(glue)
+
+theme_set(theme_minimal(base_family = 'merriweather'))
+```
+
+The NRC dictionaries will be the easiest to take care of (no wrangling)
+
+```{r}
+nrc <- textdata::lexicon_nrc()
+eil <- textdata::lexicon_nrc_eil()
+vad <- textdata::lexicon_nrc_vad() %>% 
+  magrittr::set_colnames(c('token', 'valence', 'arousal', 'dominance'))
+```
+
+# Take I: Fall and Decline
+
+```{r}
+filter(gutenberg_authors, str_detect(author, 'Gibbon, Edward'))
+```
+
+```{r}
+gibbon_id <- pull(filter(gutenberg_authors, str_detect(author, 'Gibbon, Edward')), gutenberg_author_id)
+
+desiderata <- 
+  gutenberg_metadata %>% 
+  filter(author == 'Gibbon, Edward',
+         str_detect(title, 'History of the Decline'),
+         has_text,
+         gutenberg_id > 800,
+         gutenberg_id < 900)
+
+decline_idx <- pull(desiderata, gutenberg_id)
+```
+
+```{r}
+decline_raw <- gutenberg_download(decline_idx)
+
+decline_raw %>% 
+  filter(gutenberg_id == 895)
+```
+
+This was take 1. You still need to find out why the cumsum thing didn't work out!
+
+```{r}
+decline <-
+  decline_raw %>% 
+  group_by(gutenberg_id) %>% 
+  rowwise() %>% 
+  mutate(chapter_new = grepl('Chapter [IVXLC.]+: ', text),
+         introduction = str_detect(text, 'Introduction$'),
+         chapter = cumsum(chapter_new)) %>% 
+  ungroup()
+
+  mutate(lower_case = str_count(text, '\\b[a-z]+'), # think about why you need word boundary
+         upper_case = str_count(text, '\\b[A-Z][a-z]'),
+         ratio = lower_case / (lower_case + upper_case),
+         ratio_5 = case_when(ratio > .5 ~ TRUE, TRUE ~ FALSE), # ifelse doesn't work here!
+         ratio_streak = ratio_5 & lag(ratio_5) & lag(ratio_5, n = 2) & lag(ratio_5, n = 3)) %>%  # I originally had these as &&. Why didn't that work?
+```
+
+But alas, the best thing will be to get the ratio of lowercase words to uppercase words.
+
+We don't need to a tidy version for `sentimentr`. And that makes sense -- if we're going to calculate words' sentiment based on their context, tokenizing is counterproductive. That said, we will probably want a tokenized version to do descriptives. So we'll get both.
+
+We still should get rid of paragraphs (lines) that are either empty or start with 'Chapter'. That would be simple enough, but there are *also* these subtitles / preambles under chapter headings. We could either get rid of them with the criterion that they have too few words, or that all their words are capitalized. Both criteria also get rid of ^Chapter ones, as well
+
+
+
+```{r decline_para}
+decline_para <- 
+  decline_raw %>% 
+  mutate(line = row_number(),
+         .by = gutenberg_id,
+         .after = gutenberg_id) %>%
+  filter(gutenberg_id != 890 | line >= 690) %>%
+  mutate(space = text == '',
+         paragraph_id = cumsum(space),
+         text = str_trim(text)) %>% 
+  select(volume = gutenberg_id, paragraph = paragraph_id, text) %>%
+  summarise(text = glue::glue_collapse(text, sep = ' '), .by = c(volume, paragraph)) %>% 
+  mutate(text = str_trim(text)) %>% 
+  mutate(
+         chapter_detect = str_detect(text, '^Chapter [IVXLM]+.+Part I\\.$'),
+         chapter = cumsum(chapter_detect),
+         .by = volume,
+         .before = paragraph) %>% 
+  mutate(volume = as.factor(volume - 889)) %>% 
+  select(-chapter_detect) %>% 
+  filter(text != '') %>% 
+  mutate(title_n = str_count(text, '\\b[A-Z][a-z]+'),
+         lower_n = str_count(text, '\\b[a-z]+'),
+         ratio = case_when(title_n == 0 ~ 0,
+                           TRUE ~ lower_n / title_n)) %>% 
+  filter(ratio > 1, str_detect(text, '^\\[F', negate = TRUE)) %>% 
+  select(-c(title_n, lower_n, ratio)) %>% 
+  unite(id, volume, chapter, paragraph, remove = FALSE) %>% 
+  filter(chapter > 0)
+```
+
+```{r}
+decline_tidy <- 
+  decline_para %>% 
+  unite(id, book, chapter, paragraph) %>%
+  mutate(id = as.factor(id)) %>% 
+  unnest_tokens(token, text)
+```
+
+## Tidy Pre-Analysis
+
+```{r}
+accumulated_stop_words <- tibble(token = c('christian', 'god', 'government', 'church'))
+
+decline_tidy %>% 
+  inner_join(eil, by = join_by(token == term)) %>%
+  anti_join(accumulated_stop_words) %>% 
+  summarise(contrib = sum(score), .by = c(token, AffectDimension)) %>% 
+  group_by(AffectDimension) %>% 
+  slice_max(order_by = contrib, n = 15) %>% 
+  ggplot(aes(contrib, reorder_within(token, contrib, AffectDimension), fill = AffectDimension)) +
+  geom_col() +
+  scale_y_reordered() +
+  facet_wrap(~AffectDimension, scales = 'free') + 
+  labs(
+    y = '',
+    x = 'Contribution of Term'
+  ) +
+  guides(fill = 'none') +
+  viridis::scale_fill_viridis(discrete = TRUE, option = 'A', direction = -1, end = 0.9) +
+  theme(
+    strip.text = element_text(face = 'bold')
+  )
+  
+```
+
+Figure out this one above. labeller = str_to_title(). Why doesn't that work? What's the closest thing to it that would?
+
+Publish an interactive table of top 100 as well. When you do so you'll maybe end up updating the accumulated stop words further.
+
+## `sentimentr`'ing the thing
+
+The first thing we need to do is hash the two main dictionaries we're interested in, as well as the NRC (original) to compare to the NRC-EIL so we can see how much the real-valued values of the emotions help us discriminate.
+
+```{r}
+sentiments <- c("sadness", "anger", "joy", "fear")
+
+nrc_key_maker <- function(sentiment_name, data) {
+  data %>%
+    filter(sentiment == sentiment_name) %>%
+    rename(!!sentiment_name := sentiment) %>%
+    mutate(!!sentiment_name := 1) %>%
+    as_key()
+}
+
+nrc_keys <- map(sentiments, nrc_key_maker, data = nrc) %>% set_names(nm = sentiments)
+
+eil_key_maker <- function(affect) {
+  eil %>%
+    filter(AffectDimension == affect) %>% 
+    rename(!!affect := score) %>% 
+    select(-AffectDimension) %>% 
+    as_key()
+}
+
+eil_keys <- map(sentiments, eil_key_maker) %>% set_names(nm = sentiments)
+
+decline_sentiment_maker <- function(sentiment, keys){
+  
+  key <- get(keys, envir = globalenv())
+  
+  decline_para |>
+  with(sentiment_by(get_sentences(text), list(id), polarity_dt = key[[sentiment]])) %>% 
+  # rename(!!sentiment := ave_sentiment) %>%
+  mutate(sentiment = sentiment,
+         dictionary = keys) %>%
+  separate_wider_delim(cols = id, delim = '_', names = c('book', 'chapter', 'paragraph')) %>%
+  mutate(across(c(book, chapter, paragraph), as.integer)) %>% 
+  arrange(book, chapter, paragraph) %>% 
+  mutate(paragraph_idx = row_number(),
+         book = factor(book, levels = 1:6, labels = paste0('Book ', 1:6))) %>% 
+  select(-sd)
+}
+
+decline_sentiments <- 
+  map2(rep(sentiments, 2), rep(c('nrc_keys', 'eil_keys'), each = 4), decline_sentiment_maker)
+
+decline_sentiments_paragraph <- 
+  map(decline_sentiments, 
+      \(data) {
+        data %>% 
+        summarise(score = mean(ave_sentiment, wt = word_count), .by = c(book, chapter, sentiment, dictionary)) %>% 
+        mutate(chapter_idx = row_number())
+        })
+```
+
+## Plotting Results
+
+We now have paragraph-level emotion for four emotions for all six volumes. The first way of checking this out that occurred to me was to downscale from paragraph to chapter and plot average amount of x emotion. Here are graphs for the four emotions available in the NRC-EIL lexicon
+
+```{r}
+decline_sentiments_paragraph[[8]] %>% 
+  ggplot(aes(chapter_idx, score, color = book)) +
+  geom_line(alpha = 0.5) +
+  geom_point() +
+  theme(
+    legend.position = 'bottom',
+    plot.title = element_markdown(size = rel(1.8)),
+    panel.background = element_rect(fill = 'cornsilk', color = 'cornsilk'),
+    plot.background = element_rect(fill = 'cornsilk'),
+    panel.grid.minor.x = element_blank(),
+    panel.grid.major.x = element_blank(),
+    axis.text.x = element_blank()
+  ) +
+  labs(
+    x = '',
+    y = '',
+    title = 'Emotion in *Fall and Decline*',
+    subtitle = 'Chapter by chapter',
+    color = ''
+  ) +
+  viridis::scale_colour_viridis(discrete = TRUE, option = 'A', direction = -1, end = 0.9)
+```
+
+Ok, so ... We've got some points connected by lines, but beyond this raw sense-data what do we have? It's pretty saw-toothy, so you might be tempted to say that Gibbon likes to have one chapter with a lot of emotion_i followed by a chapter with less of it. But what I'd say against that interpretation is that we are just seeing small variations in a really narrow band. If you feel like you see something and it's not just pareidolia, let me know in the comments.
+
+After coming up empty above, another way of displaying the 'emotional trajectory' of the *Fall and Decline* occurred to me. What if we didn't aggregate beyond paragraph and simply plotted the raw(ish) data and plopped a smoothed mean function on top? That's what you'll see below, again with all four emotions and getting paragraph-level scores from the rules in Rinker's `sentimentr::get_sentiment()` applied to values from NRC-EIL.
+
+```{r}
+loess_plot <- function(data, span = 1){
+  sentiment <- str_to_title(data$sentiment[1])
+  dict <- str_to_upper(str_extract(data$dictionary[1], '(nrc|eil)'))
+  max_paragraph <- max(data$paragraph_idx)
+  min_score <- min(data$ave_sentiment)
+  
+  data %>% 
+  ggplot(aes(paragraph_idx, ave_sentiment, color = paragraph_idx)) +
+  geom_point(alpha = 0.2) +
+  geom_smooth(method = 'loess', formula = 'y ~ x', span = span,
+              color = 'cornsilk', fill = 'black', alpha = 1, linewidth = 0.5) +
+  annotate(geom = 'text', label = 'Paragraph', 
+           x = 2000, y = min_score, hjust = 0.5,
+           family = 'merriweather') +
+  labs(y = 'Score',
+       x = '',
+       title = glue("**{sentiment}** across *Fall & Decline*"),
+       subtitle = 'Just testing',
+       caption = glue("{dict} dictionary")) +
+  theme(plot.title = element_markdown(size = rel(1.8), hjust = .5,
+                                      margin = margin(t = 20)),
+        panel.background = element_rect(fill = 'cornsilk', color = 'cornsilk'),
+        plot.background = element_rect(fill = 'cornsilk'),
+        panel.grid.major.x = element_blank(),
+        panel.grid.minor.x = element_blank(),
+        panel.grid.minor.y = element_blank()) +
+  viridis::scale_color_viridis(option = 'A', end = 0.7, direction = -1) +
+  guides(color = 'none')
+}
+
+loess_plot(decline_sentiments[[5]], span = 0.2)
+```
+
+Flat-lining much? Now, when one uses a smoothed function, one runs the risk of too much smoothing. Just like you can be too cool for school, you can be too smooth to groove. So what if we allow our local XXX to get wiggly? Below are three increasinly wiggly loess lines for [EMOTION]
+
+
+
+
+You want the loess function to be weighted by word count. That isn't happening, though!
+
+Aesthetically, come up with a way to move 'Paragraph' onto the plot (annotation), just above 2000.
+Make the y axis into a subtitle 
+Can you make dots gradually change color over their trajectory? Just for aesthetics, you know.
+Also, move the title onto basically that 0.4 tick
+You also want to decrease that alpha on the standard error bar
+
+For one of the four emotions, use three different alpha values for LOESS.
+
+## Comparing Binary with Real-Valued Mappings, Rules to no Rules
+
+Given that I wouldn't say we had a coup de succes above, I'm going to be fairly brief here. What _would have_ been most interesting would have been to get an "interesting" result with the real-valued dictionary and then show that it doesn't (or only very weakly) replicates with the positive/negative label version. The scenario blew up on the launch pad, so no dice there. Let's just see the paragraph-level sentiment correlation 
+
+[Do it]
+
+We can also see how much Rinker's rules (I like that alliteration) made a difference. Here I'll 
+
+# Interlude: How to Interpret Failure
+
+As critics of Karl Popper noted, when faced with a result that disconfirms a theory, exactly *what* is disconfirmed is unclear. Is it the theory we thought we were testing, or is it some auxiliary hypothesis we mistakenly thought both true and irrelevant? Here we're faced with something similar. Though I didn't announce any tests in the prologue, nothing of the form if [theory] then [result], we can think of what happened as, "If Plutchik's theory of emotions plays out in language, the resulting paragraph-level sentiment won't be nothing more than so many random dots on a plot." Not B, therefore not A. But did we, *dear reader*, really *modus tollens*? Let's go through some problematic assumptions not explicitly made (but made nonetheless):
+
+* That old "Eddy Gibs" was writing a book with emotional content (!).
+* The dictionary, a product of humans in the 2010s thinking about emotions in the 2010s, would be valid for a text written in the late ???.
+* The `sentimentr` valence modification rules would work when applied to not valence, but 'degree of emotion'
+  - We can test this by *not* using it
+
+How do you feel about these assumptions? Are any of them *so* violated that you'd attribute the "failure" of this enterprise on them as opposed to the Plutchik-Mohammed emotions sentiment analysis? My honest thought is that there are so many false positives in the NRC-EIL (and NRC) lexicon that
+
+# Take 2: The Ezra Klein Show
+
+[Coming Soon]
+
+# Take III: Another Historical Text
+
+[Coming Soon]
+
+What if we look at Carlyle's *The French Revolution: A History*. 
+
+```{r echo=FALSE}
+fr_raw <- gutenberg_download(1301)
+```
+
+```{r echo=FALSE}
+index_idx <- grep('^INDEX\\.$', str_trim(fr_raw$text))[2]
+
+fr <- 
+  fr_raw %>%
+  filter(row_number() > 225,
+         row_number() < index_idx) %>%
+  mutate(
+    text = str_trim(text),
+    text = str_replace_all(text, "[“”]", '"'),
+    text = str_replace_all(text, "’", '\''),
+    text = str_remove_all(text, '_'),
+    text = str_replace_all(text, '\\[\\d+\\]', ' '), # removes footnotes and replaces with a space
+    volume = if_else(str_detect(text, '(^VOLUME I+\\.—.+$)|(^VOLUME I+\\.$)'), text, NA_character_), # originally I was trying to extract these, dumb
+    book = if_else(str_detect(text, '^BOOK [0-9A-Z]+\\.'), text, NA_character_),
+    chapter = if_else(str_detect(text, '^Chapter \\d+\\.'), text, NA_character_),
+    book = if_else(!is.na(book), glue("{book} {lead(text)}"), book),
+    chapter = if_else(!is.na(chapter), glue("{chapter} {lead(text)}"), chapter)
+    ) %>% 
+  filter(is.na(lag(chapter)),
+         is.na(lag(book))) %>% 
+  select(volume, book, chapter, text, -gutenberg_id) %>% 
+  fill(1:3, .direction = 'down') %>% 
+  mutate(across(1:3, as_factor),
+         newline = case_when(lag(text) == '' ~ TRUE,
+                             row_number() == 1 ~ TRUE,
+                             TRUE ~ FALSE),
+         paragraph = cumsum(newline)) %>% 
+  filter(text != '',
+         tokenizers::count_words(text) > 5) %>% 
+  summarise(
+    text = glue_collapse(text, sep = ' '),
+    .by = c(volume, book, chapter, paragraph)) %>% 
+  add_count(volume, book, chapter) %>% 
+  filter(n > 1) %>% 
+  select(-n)
+```
+
+It has volumes, within volumes are books, within books are chapters. But also, within books are sub-books and within chapters are sub-chapters
+
+
+# Take 4: This American Life
+
+
+

@@ -2,7 +2,15 @@
   {
     "listing": "/posts.html",
     "items": [
+      "/posts/2024-01-31-sentiments-dictionaries/index.html",
       "/posts/2024-01-24-klein-text/index.html"
+    ]
+  },
+  {
+    "listing": "/text.html",
+    "items": [
+      "/text/2024-02-06-cs-klein-sentiment/index.html",
+      "/text/2024-02-05-dictionaries/index.html"
     ]
   }
 ]

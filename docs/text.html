@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>Justin Dollman - About Me</title>
+<title>Justin Dollman - Text Analysis</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -30,6 +30,8 @@ ul.task-list li input[type="checkbox"] {
 <script src="site_libs/quarto-search/fuse.min.js"></script>
 <script src="site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="./">
+<script src="site_libs/quarto-listing/list.min.js"></script>
+<script src="site_libs/quarto-listing/quarto-listing.js"></script>
 <script src="site_libs/quarto-html/quarto.js"></script>
 <script src="site_libs/quarto-html/popper.min.js"></script>
 <script src="site_libs/quarto-html/tippy.umd.min.js"></script>
@@ -58,12 +60,42 @@ ul.task-list li input[type="checkbox"] {
     "search-submit-button-title": "Submit"
   }
 }</script>
+<script>
 
+  window.document.addEventListener("DOMContentLoaded", function (_event) {
+    const listingTargetEl = window.document.querySelector('#listing-listing .list');
+    if (!listingTargetEl) {
+      // No listing discovered, do not attach.
+      return; 
+    }
+
+    const options = {
+      valueNames: ['listing-title','listing-author','listing-date','listing-description','listing-categories',{ data: ['index'] },{ data: ['categories'] },{ data: ['listing-date-sort'] },{ data: ['listing-file-modified-sort'] }],
+      
+      searchColumns: ["listing-title","listing-author","listing-date","listing-description","listing-categories"],
+    };
+
+    window['quarto-listings'] = window['quarto-listings'] || {};
+    window['quarto-listings']['listing-listing'] = new List('listing-listing', options);
+
+    if (window['quarto-listing-loaded']) {
+      window['quarto-listing-loaded']();
+    }
+  });
+
+  window.addEventListener('hashchange',() => {
+    if (window['quarto-listing-loaded']) {
+      window['quarto-listing-loaded']();
+    }
+  })
+  </script>
+
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
 
 <link rel="stylesheet" href="styles.css">
 </head>
 
-<body class="nav-fixed fullcontent">
+<body class="nav-fixed">
 
 <div id="quarto-search-results"></div>
   <header id="quarto-header" class="headroom fixed-top">
@@ -80,7 +112,7 @@ ul.task-list li input[type="checkbox"] {
           <div class="collapse navbar-collapse" id="navbarCollapse">
             <ul class="navbar-nav navbar-nav-scroll ms-auto">
   <li class="nav-item">
-    <a class="nav-link active" href="./about.html" aria-current="page">
+    <a class="nav-link" href="./about.html">
  <span class="menu-text">About Me</span></a>
   </li>  
   <li class="nav-item">
@@ -88,7 +120,7 @@ ul.task-list li input[type="checkbox"] {
  <span class="menu-text">Posts</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="./text.html">
+    <a class="nav-link active" href="./text.html" aria-current="page">
  <span class="menu-text">Text Analysis</span></a>
   </li>  
 </ul>
@@ -101,13 +133,15 @@ ul.task-list li input[type="checkbox"] {
 <div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
 <!-- sidebar -->
 <!-- margin-sidebar -->
-    
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        
+    <h5 class="quarto-listing-category-title">Categories</h5><div class="quarto-listing-category category-default"><div class="category" data-category="">All <span class="quarto-category-count">(2)</span></div><div class="category" data-category="Ezra Klein">Ezra Klein <span class="quarto-category-count">(1)</span></div><div class="category" data-category="R">R <span class="quarto-category-count">(2)</span></div><div class="category" data-category="sentiment analysis">sentiment analysis <span class="quarto-category-count">(2)</span></div><div class="category" data-category="text analysis">text analysis <span class="quarto-category-count">(2)</span></div></div></div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">About Me</h1>
+<h1 class="title">Text Analysis</h1>
 </div>
 
 
@@ -122,15 +156,86 @@ ul.task-list li input[type="checkbox"] {
 
 </header>
 
-<p>Hello and welcome to this extremely minimally designed space. Sorry I didn’t make it nice for you – you <em>do</em> deserve better.</p>
-<p>Since this site’s <em>raison d’être</em> is professional, I should say a word or two about me <em>qua</em> wage laborer.</p>
-<p>I’m a <s>graduate student</s> PhD candidate in political science at SUNY Stony Brook where I’m working on my dissertation under the advisement of <a href="http://www.michaelperess.com/">Michael Peress</a>. During my time here I’ve had the pleasure of taking courses with such luminaries as Stanley Feldman, Andy Delton, Yanna Krupnikov, and Vittorio Mérola.</p>
-<p>At Stony Brook I’ve been the ‘instructor of record’ for Introduction to Statistics (undergraduate and graduate) and Experiments in Political Science (undergraduate). In addition to those bureaucratically sanctioned courses, I also taught an Introductory Math Camp to incoming PhD students and, along with my esteemed former colleague <a href="https://phsieh.com/">Pei-Hsun Hsieh</a>, I co-taught a weekly introduction to R during the Fall 2019 semester to graduate students from sundry social sciences (the infamous <a href="seven-ds.pdf">flyer</a>). Simultaneously with the courses here at Stony Brook, I’ve been teaching statistics and data analysis to students from other graduate programs as well as MBA students.</p>
-<p>Before landing on the Ye Longe Isle of Bagels &amp; Hockey Fanatics, I taught English for a few years in Lima, Peru. And before that, I triple majored in philosophy, psychology, and German at the University of Arkansas (with a year spent at Karl-Franzens Universität in Graz, Austria).</p>
 
 
 
-</main> <!-- /main -->
+
+<div class="quarto-listing quarto-listing-container-grid" id="listing-listing">
+<div class="list grid quarto-listing-cols-3">
+<div class="g-col-1" data-index="0" data-categories="R,sentiment analysis,text analysis,Ezra Klein" data-listing-date-sort="1717300800000" data-listing-file-modified-sort="1707275723464" data-listing-reading-time-sort="0.02">
+<a href="./text/2024-02-06-cs-klein-sentiment/index.html" class="quarto-grid-link">
+<div class="quarto-grid-item card h-100 card-left">
+<div class="card-body post-contents">
+<h5 class="no-anchor card-title listing-title">
+Sentiment Analysis Case Study (I)
+</h5>
+<div class="listing-categories">
+<div class="listing-category" onclick="window.quartoListingCategory('R'); return false;">
+R
+</div>
+<div class="listing-category" onclick="window.quartoListingCategory('sentiment analysis'); return false;">
+sentiment analysis
+</div>
+<div class="listing-category" onclick="window.quartoListingCategory('text analysis'); return false;">
+text analysis
+</div>
+<div class="listing-category" onclick="window.quartoListingCategory('Ezra Klein'); return false;">
+Ezra Klein
+</div>
+</div>
+<div class="card-text listing-description">
+Ezra Klein Show
+</div>
+<div class="card-attribution card-text-small justify">
+<div class="listing-author">
+Justin Dollman
+</div>
+<div class="listing-date">
+Jun 2, 2024
+</div>
+</div>
+</div>
+</div>
+</a>
+</div>
+<div class="g-col-1" data-index="1" data-categories="R,sentiment analysis,text analysis" data-listing-date-sort="1714622400000" data-listing-file-modified-sort="1707275414500" data-listing-reading-time-sort="0.065">
+<a href="./text/2024-02-05-dictionaries/index.html" class="quarto-grid-link">
+<div class="quarto-grid-item card h-100 card-left">
+<div class="card-body post-contents">
+<h5 class="no-anchor card-title listing-title">
+Notes on Sentiment Dictionaries
+</h5>
+<div class="listing-categories">
+<div class="listing-category" onclick="window.quartoListingCategory('R'); return false;">
+R
+</div>
+<div class="listing-category" onclick="window.quartoListingCategory('sentiment analysis'); return false;">
+sentiment analysis
+</div>
+<div class="listing-category" onclick="window.quartoListingCategory('text analysis'); return false;">
+text analysis
+</div>
+</div>
+<div class="card-text listing-description">
+Ezra Klein Show
+</div>
+<div class="card-attribution card-text-small justify">
+<div class="listing-author">
+Justin Dollman
+</div>
+<div class="listing-date">
+May 2, 2024
+</div>
+</div>
+</div>
+</div>
+</a>
+</div>
+</div>
+<div class="listing-no-matching d-none">
+No matching items
+</div>
+</div></main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
 window.document.addEventListener("DOMContentLoaded", function (event) {
   const toggleBodyColorMode = (bsSheetEl) => {

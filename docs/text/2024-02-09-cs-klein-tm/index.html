@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>Justin Dollman - About Me</title>
+<title>Justin Dollman - Topic Modeling</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -23,22 +23,22 @@ ul.task-list li input[type="checkbox"] {
 </style>
 
 
-<script src="site_libs/quarto-nav/quarto-nav.js"></script>
-<script src="site_libs/quarto-nav/headroom.min.js"></script>
-<script src="site_libs/clipboard/clipboard.min.js"></script>
-<script src="site_libs/quarto-search/autocomplete.umd.js"></script>
-<script src="site_libs/quarto-search/fuse.min.js"></script>
-<script src="site_libs/quarto-search/quarto-search.js"></script>
-<meta name="quarto:offset" content="./">
-<script src="site_libs/quarto-html/quarto.js"></script>
-<script src="site_libs/quarto-html/popper.min.js"></script>
-<script src="site_libs/quarto-html/tippy.umd.min.js"></script>
-<script src="site_libs/quarto-html/anchor.min.js"></script>
-<link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
-<script src="site_libs/bootstrap/bootstrap.min.js"></script>
-<link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
+<script src="../../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../../site_libs/quarto-nav/headroom.min.js"></script>
+<script src="../../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../../">
+<script src="../../site_libs/quarto-html/quarto.js"></script>
+<script src="../../site_libs/quarto-html/popper.min.js"></script>
+<script src="../../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../../site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="../../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../../site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
@@ -60,7 +60,7 @@ ul.task-list li input[type="checkbox"] {
 }</script>
 
 
-<link rel="stylesheet" href="styles.css">
+<link rel="stylesheet" href="../../styles.css">
 </head>
 
 <body class="nav-fixed fullcontent">
@@ -70,7 +70,7 @@ ul.task-list li input[type="checkbox"] {
     <nav class="navbar navbar-expand-lg navbar-dark ">
       <div class="navbar-container container-fluid">
       <div class="navbar-brand-container">
-    <a class="navbar-brand" href="./index.html">
+    <a class="navbar-brand" href="../../index.html">
     <span class="navbar-title">Justin Dollman</span>
     </a>
   </div>
@@ -80,15 +80,15 @@ ul.task-list li input[type="checkbox"] {
           <div class="collapse navbar-collapse" id="navbarCollapse">
             <ul class="navbar-nav navbar-nav-scroll ms-auto">
   <li class="nav-item">
-    <a class="nav-link active" href="./about.html" aria-current="page">
+    <a class="nav-link" href="../../about.html">
  <span class="menu-text">About Me</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="./posts.html">
+    <a class="nav-link" href="../../posts.html">
  <span class="menu-text">Posts</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="./text.html">
+    <a class="nav-link" href="../../text.html">
  <span class="menu-text">Text Analysis</span></a>
   </li>  
 </ul>
@@ -98,37 +98,72 @@ ul.task-list li input[type="checkbox"] {
     </nav>
 </header>
 <!-- content -->
-<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
+<header id="title-block-header" class="quarto-title-block default page-columns page-full">
+  <div class="quarto-title-banner page-columns page-full">
+    <div class="quarto-title column-body">
+      <h1 class="title">Topic Modeling</h1>
+                      </div>
+  </div>
+    
+  
+  <div class="quarto-title-meta">
+
+      
+    
+      
+    </div>
+    
+  
+  </header><div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
 <!-- sidebar -->
 <!-- margin-sidebar -->
     
 <!-- main -->
-<main class="content" id="quarto-document-content">
-
-<header id="title-block-header" class="quarto-title-block default">
-<div class="quarto-title">
-<h1 class="title">About Me</h1>
-</div>
+<main class="content quarto-banner-title-block" id="quarto-document-content">
 
 
 
-<div class="quarto-title-meta">
 
-    
-  
-    
-  </div>
-  
+<p>Things you should read before publishing anything:</p>
+<ul>
+<li>Those three Coursera courses you have for a week</li>
+<li>The relevant Grimmer chapters</li>
+</ul>
+<section id="introduction" class="level2">
+<h2 class="anchored" data-anchor-id="introduction">Introduction</h2>
+<p>This post will cover topic modeling, starting with basic word co-occurrence clustering techniques not usually considered topic modeling and ending with complex models</p>
+<p>What are the uses of topic modeling? - Get some of these from Silge and Robinson. Others from Blei. - You can classify documents. This is maybe the best-case scenario. You fit the model on unlabeled documents, you examine the betas and see really clearly that topic 1 is [thing], topic 2 is [other thing], etc. Then you have all your documents classified, tagged, as it were. You can then use that to filter (as I did to find Ezra’s political episodes)</p>
+<p>What are the data requirements? Sure, more is better, but what else can you say?</p>
+</section>
+<section id="word-co-occurrence" class="level2">
+<h2 class="anchored" data-anchor-id="word-co-occurrence">Word Co-Occurrence</h2>
+</section>
+<section id="preprocessing" class="level2">
+<h2 class="anchored" data-anchor-id="preprocessing">Preprocessing</h2>
+<p>Bind entities with “_” (e.g., “Donald_Trump” instead of “Donald Trump”).</p>
+</section>
+<section id="interpreting-model-parameters" class="level2">
+<h2 class="anchored" data-anchor-id="interpreting-model-parameters">Interpreting Model Parameters</h2>
+<p>Betas are word (token)-topic probabilities. This is the probability that this word will be generated by this topic. If you don’t remove stopwords, the words with the highest betas will be stopwords. If you do remove stopwords, the words most like stopwords will usually be highest. This is why a good preprocessing step might be to remove high-frequency words, especially those that have a low idf, in that corpus (see preprocessing bit)</p>
+</section>
+<section id="klein-case-study" class="level2">
+<h2 class="anchored" data-anchor-id="klein-case-study">Klein Case Study</h2>
+<p>Much like philosophers, we first have to make some ontological decisions. First, given a corpus, what’s a document? Second, how many topics were employed in generated the text of this corpus?</p>
+<p>What’s a document? The extremes are pretty easy: You have individual lines at one end, then you’ve got entire episodes at the other end. Another, maybe more realistic approach would be to find natural breaks within episodes.</p>
+<p>But you might wonder how important these considerations are given that the LDA algorithm lets documents arise from <em>mixes</em> of topics. So what would be the harm in allowing for documents to be the most expansive possible unit? I’ll just mention one tradeoff. Because the algorithm considers documents as unordered bags of words, it doesn’t pay attention to the fact that words closer to each other are more likely to be generated by the same topic.</p>
+<p>When at how many k does a political topic emerge? When does it bi-, tri-, quadrufurcate, etc.? - And what are the different contents of these?</p>
+<p>Show your code for fitting many different k’s at once and then getting the per-document median GINI (mean)</p>
+</section>
+<section id="forthcoming-pre-trained-embeddings-then-clustering" class="level2">
+<h2 class="anchored" data-anchor-id="forthcoming-pre-trained-embeddings-then-clustering">Forthcoming: Pre-trained embeddings then clustering</h2>
+</section>
+<section id="assorted-notes" class="level2">
+<h2 class="anchored" data-anchor-id="assorted-notes">Assorted Notes</h2>
+<p>When you have multiple keywords per entry on a news site, that’s kind of like saying multiple topics! The real world matches LDA’s DGP there.</p>
+<p>What are the assumptions of topic modeling? Remember that it’s an unsupervised learning, so when talking about assumptions and uses, it’s probably going to inherit some of those.</p>
 
-</header>
 
-<p>Hello and welcome to this extremely minimally designed space. Sorry I didn’t make it nice for you – you <em>do</em> deserve better.</p>
-<p>Since this site’s <em>raison d’être</em> is professional, I should say a word or two about me <em>qua</em> wage laborer.</p>
-<p>I’m a <s>graduate student</s> PhD candidate in political science at SUNY Stony Brook where I’m working on my dissertation under the advisement of <a href="http://www.michaelperess.com/">Michael Peress</a>. During my time here I’ve had the pleasure of taking courses with such luminaries as Stanley Feldman, Andy Delton, Yanna Krupnikov, and Vittorio Mérola.</p>
-<p>At Stony Brook I’ve been the ‘instructor of record’ for Introduction to Statistics (undergraduate and graduate) and Experiments in Political Science (undergraduate). In addition to those bureaucratically sanctioned courses, I also taught an Introductory Math Camp to incoming PhD students and, along with my esteemed former colleague <a href="https://phsieh.com/">Pei-Hsun Hsieh</a>, I co-taught a weekly introduction to R during the Fall 2019 semester to graduate students from sundry social sciences (the infamous <a href="seven-ds.pdf">flyer</a>). Simultaneously with the courses here at Stony Brook, I’ve been teaching statistics and data analysis to students from other graduate programs as well as MBA students.</p>
-<p>Before landing on the Ye Longe Isle of Bagels &amp; Hockey Fanatics, I taught English for a few years in Lima, Peru. And before that, I triple majored in philosophy, psychology, and German at the University of Arkansas (with a year spent at Karl-Franzens Universität in Graz, Austria).</p>
-
-
+</section>
 
 </main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
@@ -263,6 +298,8 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     }
   }
 });
+</script>
+<script src="https://utteranc.es/client.js" repo="jdollman/second-person" issue-term="pathname" theme="github-light" crossorigin="anonymous" async="">
 </script>
 </div> <!-- /content -->
 
