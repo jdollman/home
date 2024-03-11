@@ -1,0 +1,10 @@
+---
+title: "Text Analysis"
+listing: 
+  contents: text 
+  type: grid
+  sort: "date desc"
+  categories: true
+---
+
+

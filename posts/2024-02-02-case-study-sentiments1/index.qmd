@@ -1,0 +1,260 @@
+---
+title: "Sentiment Analysis Case Study (I)"
+description: "Ezra Klein Show"
+author: Justin Dollman
+date: 03-02-2024
+date-modified: "09/02/2024"
+categories: [R, sentiment analysis, text analysis, Ezra Klein]
+format:
+    html:
+      code-fold: true
+      code-tools: true
+draft: true
+---
+
+# Introduction
+
+In this case study I'll imagine one were given a corpus consisting of the transcripts of a podcast (in this case, [The Ezra Klein Show](https://www.nytimes.com/column/ezra-klein-podcast)) and asked to perform a sentiment analysis. What can you find out? Which methods work well, which do not? 
+
+A couple notes before we begin.
+
+This is going to be a from-square-one case study, where I start with methods so bad that I wouldn't even bother doing them in any real application just to show you how bad they are.^["Why do them at all?" you sensibly ask. Because I fear that most people who "learn" sentiment analysis learn just the bad way. "A little learning is a dangerous thing," as [the saying](https://en.wiktionary.org/wiki/a_little_knowledge_is_a_dangerous_thing) goes.] After covering basic use of dictionary-based methods, I'm going to introduce one rule-based strategy and then finish off with a deep learning approach.
+
+My second prefatory note is related to the first. This case study is a little anachronistic. This is how one would have performed a sentiment analysis in the mid-to-late 2010s. As we can't help but know, Natural Language Processing (NLP) has made huge strides in the 2020s. Future posts will cover those. This post is then somewhat of historical interest. It's also me working through these things I learned back in the day one last time.
+
+The last note is a technical note. The code here is the code you *would* need to run the analyses *if* you had the transcript data. I cannot provide that data, but you hopefully have some other text data you want to analyze! Assuming you've cleaned it, you should basically be able to copy this code, drop your data in, and be off to the races! 
+
+Alright, let's begin.
+
+# The Data, The Libraries
+
+Fair use something something
+
+```{r echo=TRUE, eval=FALSE}
+ezra %>% 
+  filter(str_detect(url, 'karnofsky|altman')) %>% 
+  select(date, speaker, text) %>% 
+  write_csv('klein_karnofsky_altman.csv')
+```
+
+
+```{r message=FALSE}
+# # text libraries
+# library(sentimentr)
+# library(vader)
+reticulate::use_python("/Users/jdollman/opt/anaconda3/bin/python")
+library(cleanNLP)
+library(tidytext)
+# 
+# # others
+# library(ggtext)
+library(tidyverse)
+# library(ggupset)
+# 
+# # data
+# #ezra <- read_csv()
+# political_words <- read_csv('../../Utils/Political Words/500_political_words.csv')
+
+ezra <- read_csv('resources/klein_karnofsky_altman.csv')
+```
+
+```{r data_lookee}
+ezra %>%
+  slice_head(n = 4, by = date)
+```
+
+How many episodes? An important consideration in any text analysis is, How much text is there? In this case, we have around 220 episodes from [first] to [last] where each episode contains around XXX words. That's enough data for doing basic descriptive analyses. In future case studies the size of the data will be much, much larger.^[In case you're wondering what too little text would be for doing analyses, I once tutored a student who was making wordclouds of individual Janis Joplin songs. It was wild.]
+
+Following the principles set forth in Silge and Robinson's *Text Mining in R*, we'll get the data in a 'tidy' format where we take the unstructured utterances in the `text` column above, tokenize them, and then have one row per token.
+
+```{r}
+# ezra_tidy <- 
+#   ezra %>% 
+#   unnest_tokens(token, text)
+```
+
+
+# Dictionaries
+
+Out of the box, the `tidytext` package gives us four sentiment dictionaries: AFINN, BING, NRC, and Loughran and McDonald's dictionary for financial sentiment. Given this application, we'll ignore the last one.^[If you're interested in learning more about these dictionaries, see this page.] Let's briefly familiarize ourselves with them.
+
+```{r}
+get_sentiments(lexicon = 'afinn') %>% 
+  slice_sample(n = 20)
+```
+
+```{r}
+get_sentiments(lexicon = 'bing') %>% 
+  slice_sample(n = 20)
+```
+
+```{r}
+get_sentiments(lexicon = 'nrc') %>% 
+  slice_sample(n = 20)
+```
+
+If you didn't just scroll past these lines of code and output, you'll notice that, despite the structural similarity of being key-value two-column tibbles, the three lexica are fundamentally different. AFINN maps words to values between -5 and 5, inclusive. BING maps words to 'positive' and 'negative' (which you'd probably turn into -1 and 1 for analyses). NRC maps words to a panoply of different sentiments, among which you can find positive and negative. There's a lot that can be said about these dictionaries, and if you're doing to perform a 'serious' sentiment analysis, part an absolute minimum due diligence would be for you to know the ins and outs of these and other dictionaries.^[As mentioned above, you can check out my one-stop dictionary explainer.] For the purposes of this case study, however, we're just going to move on to another big problem
+
+```{r }
+afinn <- get_sentiments(lexicon = 'afinn')
+bing <- get_sentiments(lexicon = 'bing')
+nrc_emotions <- filter(get_sentiments(lexicon = 'nrc'), 
+                    !(sentiment %in% c('positive', 'negative')))
+nrc_polar <- filter(get_sentiments(lexicon = 'nrc'), 
+                    sentiment %in% c('positive', 'negative'))
+```
+
+## Sentimental about Politics
+
+```{r }
+# political_words %>% 
+#   left_join(rename(bing, bing = sentiment), join_by('token' == 'word')) %>% 
+#   left_join(rename(afinn, afinn = value), join_by('token' == 'word')) %>%
+#   left_join(rename(nrc_polar, nrc = sentiment), join_by('token' == 'word')) %>% 
+#   mutate(afinn = ifelse(afinn > 0, 'positive', 'negative')) %>% 
+#   pivot_longer(bing:nrc, names_to = 'lexicon', values_to = 'polarity') %>% 
+#   filter(!is.na(polarity)) %>% 
+#   slice_max(order_by = n, n = 15, by = lexicon) %>%
+#   mutate(lexicon = str_to_upper(lexicon),
+#          polarity = str_to_title(polarity),
+#          token = str_to_title(token)) %>% 
+#   ggplot(aes(x = n, y = reorder_within(token, n, within = lexicon), fill = polarity)) +
+#   geom_col() +
+#   tidytext::scale_y_reordered() +
+#   facet_wrap(~lexicon, ncol = 1, scales = 'free') +
+#   theme_minimal() +
+#   theme(
+#     legend.position = 'none',
+#     strip.text = element_text(face = 'bold', size = rel(.7),
+#                               margin = margin(.08,0,.08,0, "lines")),
+#     strip.background = element_rect(color = 'gray20', fill = 'grey92')
+#   ) +
+#   labs(
+#     y = '',
+#     x = '',
+#     fill = '',
+#     title = "Hey! That's not a sentiment word! That's a neutral word!",
+#     subtitle = "Words tidytext's main dictionaries classify as positive or negative, but aren't"
+#   )
+```
+
+```{r}
+# ezra_tidy %>% 
+#   inner_join(get_sentiments('bing'), by = join_by("token" == "word")) %>% 
+#   count(token, sentiment, name = 'count') %>% 
+#   slice_max(order_by = count, n = 30) %>% 
+#   ggplot(aes(count, y = fct_reorder(token, count), fill = sentiment)) +
+#   geom_col() +
+#   scale_x_log10(expand = expansion(0, 0),
+#     labels = scales::label_comma()) +
+#   labs(
+#     x = 'Token Count',
+#     y = '',
+#     title = 'Top 30 Words Most Important for Ezra\'s Sentiment Scores ',
+#     fill = 'Polarity',
+#     caption = 'Caveat lector: x-axis is on log scale'
+#   ) +
+#   theme_minimal() +
+#   theme(legend.position = c(.9, .2),
+#         panel.grid.major.y = element_blank())
+```
+
+Does this get cleared up after removing political words from the dictionaries? Also, how big of a difference does this make to 'takeaways'? A distribution of changes for each dictionary!
+
+## Handling Negation
+
+There's another issue
+
+```{r}
+# ezra_tidy_bi <- 
+#   ezra %>% 
+#   unnest_ngrams(token, text, n = 2L, n_min = 2)
+```
+
+```{r}
+# ezra_tidy_bi %>% 
+#   select(speaker, token)
+# 
+# ezra_tidy_bi %>% 
+#   select(speaker, token) %>% 
+#   separate_wider_delim(col = token, delim = ' ', names = c('a', 'b'))
+```
+
+```{r}
+# lexicon::hash_valence_shifters %>%
+#   as_tibble() %>% 
+#   filter(y == 1)
+```
+
+```{r}
+# negations <- as_tibble(hash_valence_shifters) %>% filter(y == 1) %>% pull(x)
+# 
+# ezra_bi_sentiment <- 
+#   ezra_tidy_bi %>% 
+#   select(speaker, token) %>% 
+#   separate_wider_delim(col = token, delim = ' ', names = c('a', 'b')) %>% 
+# #   inner_join(get_sentiments('bing'), by = join_by("b" == "word")) %>%
+#   mutate(negation = ifelse(a %in% negations, TRUE, FALSE))
+```
+
+```{r}
+# c(sum(ezra_bi_sentiment$negation), mean(ezra_bi_sentiment$negation))
+```
+
+As a last note, it might make sense to expand the window before the word to more than just the immediately preceding word. Following what we did above, it would be straightforward to extract *tri*grams and flip the target word's valence if either one of the two preceding words were negative. But at that point we might as well embrace the fact that we're now doing *rule-based* sentiment analysis and move on to the next section.
+
+# The Rules-Based Approach
+
+Let me start by saying that this header implies that rules-based approaches are *not* dictionary-based. False, fake news. They *are* dictionary-based, they just deploy the dictionaries more intelligently. "More intelligently" here refers to taking account of words' context beyond a simple, "Was this word immediately preceded by a negation?"^[Technically, inverting the sentiment score if a word is preceded by a negation *is* a rule-based approach, but it's so simple that [insert "C'mon, *testa di cazzo* Italian hand gesture].] In this tutorial I'm going to cover one rule-based sentiment scoring procedure, `sentimentr` (CITATION).
+
+## `sentimentr`
+
+`sentimentr` was developed by Tyler Rinker, prolific author of `R` packages, to be ??? trade off against speed^[In the next post I'll measure how long the various methods take to tag texts of different lengths to see exactly what kinds of gains we're talking about].
+Rinker describes `sentimentr` as an "augmented dictionary lookup."
+
+Without going into the rules themselves, I'll just mention here that Rinker's `sentimentr` handles of four "valence shifters": 
+
+1. negators (e.g., *not* good; old story)
+2. intensifiers (*really* good)
+3. 'downtoners' (*somewhat* good)
+4. adversative conjunctions (It's good, *but* I didn't like it.)
+
+# Deep Learning
+
+It might come surprising so early
+
+* Richard Socher et al. 2013^["Dick Socher?! I don't even know her!"]
+
+
+```{r}
+# library(cleanNLP)
+cnlp_init_spacy(model_name="en_core_web_sm")
+
+ezra_anno <- 
+get_sentiment(ezra_anno)
+```
+
+
+Have a photo of Chace Crawford
+
+Recursive Neural Network (not a *recurrent* neural network)
+
+Recursivity was singled out as an important feature of human language since at least Noam Chomsky's ???
+
+A tour through the treebank. 
+Before reading further, try to answer a few questions.
+
+How are numbers at the nodes calculated?
+Which number is the overall sentiment of the tree?
+
+It still makes mistakes (see image)
+
+
+# Conclusion
+
+There's a phrase in the XXX episode, "four inch nail embedded in your face." For most of us, that would be an extemely painful and negative thing. But not for a sentiment dictionary. This is a good example of needing to think through whether concepts are adequately captured by individual words. In this case, no. 
+
+## Methodological Takeaways
+
+## Substantive Takeaways
+
