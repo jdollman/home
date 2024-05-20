@@ -5,9 +5,9 @@ website:
   title: "Justin Dollman"
   navbar:
     right:
-      - about.qmd
       - posts.qmd
       - text.qmd
+      - about.qmd
 format:
   html:
     theme: zephyr
